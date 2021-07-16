@@ -20,7 +20,9 @@ function Footer() {
             <h4>Site Map</h4>
             <ul className="list-unstyled ">
               <li>Play</li>
+               <br></br>
               <li>Create</li>
+               <br></br>
               <li>About us</li>
             </ul>
           </div>

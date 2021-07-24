@@ -1,12 +1,12 @@
 import "./App.css";
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import ExitQuiz from "./components/Modals/ExitQuiz";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Welcome to the capstone projects, this is your initial react app</p>
-      </header>
+      <ExitQuiz />
     </div>
   );
 }

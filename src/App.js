@@ -9,14 +9,8 @@ function App() {
       <header className="App-header">
         <p>Welcome to the capstone projects, this is your initial react app</p>
         tadaaa
-<<<<<<< Updated upstream
-        <About />
-||||||| constructed merge base
-        <AboutUs />
-=======
         <Sign_in />
         <About />
->>>>>>> Stashed changes
       </header>
     </div>
   );

@@ -5,6 +5,7 @@ import { Container } from "react-bootstrap";
 // import TeamMemberCard from "./TeamMemberCard";
 import TeamMembers from "./TeamMembers";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 function TeamGrid() {
   return (
     <>
@@ -41,7 +42,7 @@ function TeamGrid() {
           </div>
         </div>
 
-        <div className="row row-cols-1 row-cols-xl-3 g-4">
+        <div className="row row-cols-1 row-cols-lg-3 g-5">
           {TeamMembers.map((member, index) => {
             if (member.title !== "Team Leader") {
               return (
@@ -56,15 +57,16 @@ function TeamGrid() {
                       <a href={member.linkedInLink}>
                         <img
                           src="https://www.pngall.com/wp-content/uploads/2016/07/Linkedin-Download-PNG.png"
-                          width="10%"
-                          height="10%"
+                          width="15%"
+                          height="15%"
                         ></img>
                       </a>
+                      {"                              "}
                       <a href={member.githubLink}>
                         <img
                           src="https://major.io/wp-content/uploads/2014/08/github-150x150.png"
-                          width="10%"
-                          height="10%"
+                          width="15%"
+                          height="15%"
                         ></img>
                       </a>
                     </div>

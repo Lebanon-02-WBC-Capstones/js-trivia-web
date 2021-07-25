@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import AboutUs from "./components/AboutUs";
+import About from "./Components/About";
 import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <p>Welcome to the capstone projects, this is your initial react app</p>
         tadaaa
-        <AboutUs />
+        <About />
       </header>
     </div>
   );

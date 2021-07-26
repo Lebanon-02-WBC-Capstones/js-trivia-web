@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import ThankYouModal from "./ThankYouModal";
 
-const [modalShow, setModalShow] = useState(false);
-
-const handleShow = () => setModalShow(true);
-
 export default function ContactUs() {
+  const [show, setShow] = useState(false);
+
   return (
     <Form>
       <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -24,10 +22,10 @@ export default function ContactUs() {
         <Form.Label>Message</Form.Label>
         <Form.Control as="textarea" rows={3} />
       </Form.Group>
-      <Button variant="primary" type="submit" onClick={handleShow}>
+      <Button variant="primary" type="submit" onClick={() => setShow(true)}>
         Submit
       </Button>
-      <ThankYouModal modalShow={modalShow} />
+      <ThankYouModal show={show} onHide={() => setShow(false)} />
     </Form>
   );
 }

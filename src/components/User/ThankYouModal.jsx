@@ -1,15 +1,9 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 
-export default function ThankYouModal(modalShow) {
-  //   const handleClose = () => setModalShow(false);
+export default function ThankYouModal(props) {
   return (
-    <Modal
-      id="ModalPage"
-      show={modalShow}
-      //   onHide={handleClose}
-      animation={false}
-    >
+    <Modal id="ModalPage" {...props}>
       <Modal.Body>
         <p>Thank you for submitting your message!</p>
       </Modal.Body>
@@ -17,7 +11,7 @@ export default function ThankYouModal(modalShow) {
         <Button
           variant="outline-danger"
           className="Button"
-          //   onClick={handleClose}
+          onClick={props.onHide}
         >
           Close
         </Button>

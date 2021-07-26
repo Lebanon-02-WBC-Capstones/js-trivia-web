@@ -1,17 +1,19 @@
 import "./App.css";
 import React from "react";
+import WhoAreWe from "./Components/About/WhoAreWe";
+import Report from "./Components/Modals/Report";
+import Unpost from "./Components/Modals/Unpost";
 import About from "./Components/About";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Sign_in from "./Components/Modals/Sign_in";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Welcome to the capstone projects, this is your initial react app</p>
-        tadaaa
-        <Sign_in />
-        <About />
-      </header>
+      <WhoAreWe />
+      <Report />
+      <br /> <br />
+      <Unpost />
+      <Sign_in />
+      <About />
     </div>
   );
 }

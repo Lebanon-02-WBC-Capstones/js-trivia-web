@@ -37,6 +37,10 @@
   }
 }
 
+.WhoAreWe {
+  text-align: center;
+}
+
 .leaderRow {
   background-color: transparent;
 }
@@ -59,9 +63,6 @@
   height: 100%;
   width: 100%;
   object-fit: contain;
-}
-
-.top-card {
 }
 
 .cardText {

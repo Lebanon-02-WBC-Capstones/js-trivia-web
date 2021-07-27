@@ -41,3 +41,16 @@ textarea:focus {
   border-radius: 20px;
   width: 25%;
 }
+
+#SignInButton {
+  border-radius: 20px;
+  width: 25%;
+  background-color: white;
+  border-color: #1a73e8;
+  color: #1a73e8;
+  border-width: 2px;
+}
+
+#signIn {
+  border: 0px;
+}

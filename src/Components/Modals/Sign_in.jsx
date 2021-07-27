@@ -1,6 +1,11 @@
 import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Container } from "react-bootstrap";
 import "./Modals.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import email from "./images/email.png";
+import password from "./images/padlock.png";
+import gmail from "./images/gmail.png";
+import facebook from "./images/facebook.png";
 
 function Sign_in() {
   const [show, setShow] = useState(false);
@@ -9,7 +14,7 @@ function Sign_in() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Report
+        Sign In
       </Button>
 
       {/* Modal header */}
@@ -22,42 +27,86 @@ function Sign_in() {
         {/* Modal Body */}
 
         <Modal.Body>
-          <label htmlFor="report">
-            <img
-              src="C:\Users\Hazem El Sankari\Downloads\email.png"
-              // width="10%"
-              // height="10%"
-            ></img>
-          </label>
-          {/* <br /> */}
-          <input
-            type="text"
-            name="email"
-            placeholder="Enter Email"
-            className="ModalBody"
-          />
-          <br />
-          <label htmlFor="blog">Message:</label>
-          <br />
-          <textarea
-            name="blog"
-            rows="5"
-            cols="30"
-            placeholder="Message"
-            className="ModalBody"
-          ></textarea>
+          <Container>
+            <div className="row justify-content-center" id="signIn">
+              <div className="col-sm-2 p-0 my-auto text-center">
+                <img
+                  src={email}
+                  alt="email"
+                  border="0"
+                  height="65%"
+                  width="55%"
+                />
+              </div>
+              <div className="col-sm-10 p-0 my-auto ">
+                <input
+                  type="text"
+                  name="report"
+                  placeholder="Email"
+                  className="ModalBody"
+                />
+              </div>
+            </div>
+            <br />
+            <div className="row justify-content-center">
+              <div className="col-sm-2 p-0 my-auto text-center">
+                <img
+                  src={password}
+                  alt="email"
+                  border="0"
+                  height="65%"
+                  width="55%"
+                />
+              </div>
+              <div className="col-sm-10 p-0 my-auto mx-auto ">
+                <input
+                  type="text"
+                  name="report"
+                  placeholder="Password"
+                  className="ModalBody"
+                />
+              </div>
+            </div>
+            <br />
+            <div className="row">
+              <div className="col-md-12 text-center">
+                <Button id="SignInButton">Sign In</Button>
+              </div>
+            </div>
+            <br />
+
+            <div className="row">
+              <div className="col-md-12 text-center">
+                <p>OR:</p>
+              </div>
+            </div>
+
+            <div className="row justify-content-center">
+              <div className="col-md-2 p-0 text-center">
+                <a href="#">
+                  <img
+                    src={gmail}
+                    alt="email"
+                    border="0"
+                    // height="65%"
+                    // width="55%"
+                  />
+                </a>
+              </div>
+              <div className="col-md-2 p-0 text-center ">
+                <a href="#">
+                  <img
+                    src={facebook}
+                    alt="email"
+                    border="0"
+                    // height="65%"
+                    // width="55%"
+                  />
+                </a>
+              </div>
+            </div>
+          </Container>
         </Modal.Body>
-
-        {/* Modal Buttons */}
-
-        <Modal.Footer id="ModalFooter">
-          <Button variant="outline-danger" id="SendButton">
-            Send
-          </Button>{" "}
-          <Button variant="outline-success" id="CancelReport">
-            Cancel
-          </Button>{" "}
-        </Modal.Footer>
       </Modal>
     </>
   );

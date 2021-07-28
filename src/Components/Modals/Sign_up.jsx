@@ -7,7 +7,7 @@ import password from "./images/padlock.png";
 import gmail from "./images/gmail.png";
 import facebook from "./images/facebook.png";
 
-function Sign_in() {
+function Sign_up() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -103,4 +103,4 @@ function Sign_in() {
   );
 }
 
-export default Sign_in;
+export default Sign_up;

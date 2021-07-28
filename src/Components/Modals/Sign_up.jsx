@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Container } from "react-bootstrap";
 import "./Modals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import email from "./images/email.png";
@@ -14,14 +14,14 @@ function Sign_in() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Sign In
+        Sign Up
       </Button>
 
       {/* Modal header */}
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header id="ModalTitle">
-          <Modal.Title>Welcome Back! We Missed You!</Modal.Title>
+          <Modal.Title>Create Your Free Account!</Modal.Title>
         </Modal.Header>
 
         {/* Modal Body */}
@@ -83,6 +83,21 @@ function Sign_in() {
             </div>
           </div>
         </Modal.Body>
+        <Modal.Footer id="ModalFooter">
+          <Container>
+            <div className="row text-center">
+              <a href="#">
+                <p>No thanks, I will continue as a guest</p>
+              </a>
+            </div>
+            <div className="row text-center">
+              <p>Already have an account?</p>
+              <a href="#">
+                <p>Sign in</p>
+              </a>
+            </div>
+          </Container>
+        </Modal.Footer>
       </Modal>
     </>
   );

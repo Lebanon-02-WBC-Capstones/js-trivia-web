@@ -54,3 +54,12 @@ textarea:focus {
 #signIn {
   border: 0px;
 }
+
+/* The below modal-header and modal-footer remove the border lines from the modals */
+.modal-header {
+  border-bottom: 0 none;
+}
+
+.modal-footer {
+  border-top: 0 none;
+}

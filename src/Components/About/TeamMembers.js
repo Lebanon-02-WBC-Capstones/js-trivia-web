@@ -18,7 +18,7 @@ const TeamMembers = [
   {
     name: "Raghad Al-Samrout",
     image:
-      "https://media-exp1.licdn.com/dms/image/C4E03AQGiPngVt4yN1A/profile-displayphoto-shrink_800_800/0/1614268265519?e=1632355200&v=beta&t=3N3Cd8Arl6NVhsbWKW7iB9_LYsXClGwaf4KwRaaI5xI",
+      "https://media-exp1.licdn.com/dms/image/C4E03AQFt4reXX8-UJg/profile-displayphoto-shrink_800_800/0/1627232556488?e=1632960000&v=beta&t=YUNNlSSZSANgDaYjnwn3-BFz9Q0aN3chz7R570VmlpI",
     title: "Team Member",
     linkedInLink: "https://www.linkedin.com/in/raghad-al-samrout/",
     githubLink: "https://github.com/raghadsam",

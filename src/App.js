@@ -5,12 +5,13 @@ import Report from "./Components/Modals/Report";
 import Unpost from "./Components/Modals/Unpost";
 import About from "./Components/About";
 import Sign_in from "./Components/Modals/Sign_in";
-import Home from './components/Home';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from "./Components/Home";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div className="App">
+      <Home />
       <WhoAreWe />
       <Report />
       <br /> <br />
@@ -18,6 +19,7 @@ function App() {
       <p>Sign In Below</p>
       <Sign_in />
       <About />
+    </div>
   );
 }
 

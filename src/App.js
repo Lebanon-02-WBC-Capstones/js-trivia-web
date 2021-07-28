@@ -5,13 +5,13 @@ import Report from "./Components/Modals/Report";
 import Unpost from "./Components/Modals/Unpost";
 import About from "./Components/About";
 import Sign_in from "./Components/Modals/Sign_in";
-import Home from "./Components/Home";
+import Footer from "./Components/Footer/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Footer />
       <WhoAreWe />
       <Report />
       <br /> <br />

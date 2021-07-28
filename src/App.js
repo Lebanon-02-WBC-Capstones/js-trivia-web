@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ExitQuiz from "./components/Modals/ExitQuiz";
+import ExitQuiz from "./Components/Modals/ExitQuiz";
 
 function App() {
   return (

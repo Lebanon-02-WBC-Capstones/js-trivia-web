@@ -1,31 +1,18 @@
-{
-  /*
-const categories = {
-  0: "History",
-  1: "Science",
-  2: "Music",
-  3: "Geography",
-  4: "Languages",
-  5: "Coding",
-  6: "Literature",
-  7: "Movies",
-  8: "Business",
-  9: "Politics",
-  10: "Sports",
-  11: "Challenges",
+export const dropdownItems = {
+  categories: [
+    "History",
+    "Science",
+    "Music",
+    "Geography",
+    "Languages",
+    "Coding",
+    "Literature",
+    "Movies",
+    "Business",
+    "Politics",
+    "Sports",
+    "Challenges",
+  ],
+  difficulty: ["Easy", "Medium", "Hard"],
+  sortBy: ["Most Recent", "Highest Rate", "Most Players"],
 };
-
-const difficulty = {
-  0: "Easy",
-  1: "Medium",
-  2: "Hard",
-};
-
-const sortby = {
-  0: "Most Recent",
-  1: "Highest Rate",
-  2: "Most Players",
-};
-
-*/
-}

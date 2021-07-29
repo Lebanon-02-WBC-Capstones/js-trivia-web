@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css";
+// import "../App.css";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Person } from "react-bootstrap-icons";
 export default function NavBar() {

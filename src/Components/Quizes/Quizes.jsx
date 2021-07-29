@@ -1,8 +1,8 @@
 import React from "react";
 // import SearchBar from "./SearchBar";
-
+import QuizGrid from "./QuizGrid";
 function Quizes() {
-  return <div>Quzies</div>;
+  return <QuizGrid />;
 }
 
 export default Quizes;

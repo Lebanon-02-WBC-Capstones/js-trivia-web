@@ -1,6 +1,7 @@
 import React from "react";
 // import { Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../../App.css";
 /* eslint-disable react/prop-types */
 function TeamMemberCard(props) {
   return (
@@ -8,16 +9,16 @@ function TeamMemberCard(props) {
       {props.members.map((member, index) => {
         if (member.title !== "Team Leader") {
           return (
-            <div className="col-md-4">
-              <div className="col-md-9 mx-auto">
+            <div className="col-4 col-md-4">
+              <div className="col-9 col-md-9 mx-auto">
                 <div className="card mt-5" id={index}>
                   <div className="card-body">
                     <img src={member.image} width="100%" height="100%"></img>
-                    <h5 className="card-title text-dark">
-                      <small>{member.name}</small>
+                    <h5 className="card-title text-dark cardText ">
+                      {member.name}
                     </h5>
-                    <p className="card-text text-dark">
-                      <small>{member.title}</small>
+                    <p className="card-text text-dark cardText">
+                      {member.title}
                     </p>
                     <a href={member.linkedInLink}>
                       <img

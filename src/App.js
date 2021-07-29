@@ -49,6 +49,7 @@ function App() {
 
         <Footer />
       </Router>
+      <About />
     </div>
   );
 }

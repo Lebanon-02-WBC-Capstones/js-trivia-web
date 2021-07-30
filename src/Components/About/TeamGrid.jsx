@@ -9,7 +9,7 @@ function TeamGrid() {
     <>
       <Container>
         <div className="row justify-content-center">
-          <div className="col-md-3">
+          <div className="col-3 col-md-3">
             <div className="card">
               <div className="card-body">
                 <img
@@ -17,11 +17,11 @@ function TeamGrid() {
                   width="100%"
                   height="100%"
                 ></img>
-                <h5 className="card-title text-dark">
-                  <small>{TeamMembers[0].name}</small>
+                <h5 className="card-title text-dark cardText">
+                  {TeamMembers[0].name}
                 </h5>
-                <p className="card-text text-dark">
-                  <small>{TeamMembers[0].title}</small>
+                <p className="card-text text-dark cardText">
+                  {TeamMembers[0].title}
                 </p>
                 <a href={TeamMembers[0].linkedInLink}>
                   <img

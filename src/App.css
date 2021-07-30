@@ -165,4 +165,36 @@ input:focus {
   display: flex;
   justify-content: space-between;
   width: 25vw;
+/* Media Queries for adjusting card text sizes when screen size changes */
+
+/* Small devices (landscape phones, 200px and up) */
+@media (min-width: 200px) {
+  h5.cardText,
+  p.cardText {
+    font-size: 0.5rem !important;
+  } /*1rem = 16px*/
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  h5.cardText,
+  p.cardText {
+    font-size: 1rem !important;
+  } /*1rem = 16px*/
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  h5.cardText,
+  p.cardText {
+    font-size: 1.2rem !important;
+  } /*1rem = 16px*/
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  h5.cardText,
+  p.cardText {
+    font-size: 1.2rem !important;
+  } /*1rem = 16px*/
 }

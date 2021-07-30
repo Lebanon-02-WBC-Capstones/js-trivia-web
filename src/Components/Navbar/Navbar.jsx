@@ -9,7 +9,7 @@ export default function NavBar() {
     <div>
       <Navbar id="Navbar" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand>
             <Link to="/" style={{ all: "unset" }}>
               Logo
             </Link>
@@ -25,12 +25,12 @@ export default function NavBar() {
                 Create
               </Link>
             </Nav.Link>
-            <Nav.Link href="#About" id="About">
+            <Nav.Link id="About">
               <Link to="/about" style={{ all: "unset" }}>
                 About
               </Link>
             </Nav.Link>
-            <Nav.Link href="#Username" id="Username">
+            <Nav.Link id="Username">
               <Link to="/profile/0" style={{ all: "unset" }}>
                 UserName
               </Link>

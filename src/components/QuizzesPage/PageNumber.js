@@ -7,13 +7,20 @@ export default function Pagenumber() {
   return (
     <div className="Pagi">
       <Pagination>
-        <Pagination.Prev />
-        <Pagination.Item active>{1}</Pagination.Item>
-        <Pagination.Item>{2}</Pagination.Item>
-        <Pagination.Item>{3}</Pagination.Item>
-        <Pagination.Item>{4}</Pagination.Item>
-
-        <Pagination.Next />
+        <Pagination.Prev id="rad" disabled className="m-1" />
+        <Pagination.Item id="rad" className="m-1" active>
+          {1}
+        </Pagination.Item>
+        <Pagination.Item id="rad" className="m-1">
+          {2}
+        </Pagination.Item>
+        <Pagination.Item id="rad" className="m-1">
+          {3}
+        </Pagination.Item>
+        <Pagination.Item id="rad" className="m-1">
+          {4}
+        </Pagination.Item>
+        <Pagination.Next id="rad" className="m-1" />
       </Pagination>
     </div>
   );

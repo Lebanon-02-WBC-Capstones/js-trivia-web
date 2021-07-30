@@ -126,13 +126,13 @@
 
 #blueBackground {
   background-color: #1a73e8;
-  border-radius: 25px;
+  border-radius: 50rem;
   color: black;
 }
 
 #greyBackground {
   border-color: #1a73e8;
-  border-radius: 25px;
+  border-radius: 50rem;
   color: black;
   background-color: #f7f7f7;
   border-width: 2px;

@@ -15,7 +15,8 @@
   "rules": {
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
-    "no-console": 2
+    "no-console": 2,
+    "react/prop-types": 0
   },
   "settings": {
     "react": {

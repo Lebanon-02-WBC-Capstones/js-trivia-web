@@ -1,45 +1,54 @@
 /* eslint-disable react/prop-types */
 import "./App.css";
 import React from "react";
-// import WhoAreWe from "./Components/About/WhoAreWe";
-// import Report from "./Components/Modals/Report";
-// import Unpost from "./Components/Modals/Unpost";
-//import About from "./Components/About";
-//import Footer from "./Components/Footer/Footer";
-// import Sign_in from "./Components/Modals/Sign_in";
-// import Home from "./Components/Home";
-import DropdownList from "./Components/Dropdown/Dropdown.jsx";
-import { dropdownItems } from "./Components/Dropdown/List";
 
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import About from "./Components/About";
+import Create from "./Components/Create";
+import Home from "./Components/Home";
+import Profile from "./Components/Profile";
+import Quizes from "./Components/Quizes";
+import Result from "./Components/Result";
+import Question from "./Components/Question";
 function App() {
   return (
     <div className="App">
-      <DropdownList
-        dropdownItems={dropdownItems.categories}
-        title="Category"
-        style="blueBackground"
-      />
-      <DropdownList
-        dropdownItems={dropdownItems.difficulty}
-        title="Difficulty"
-        style="whiteBackground"
-      />
-      <DropdownList
-        dropdownItems={dropdownItems.sortBy}
-        title="Sort By"
-        style="whiteBackground"
-      />
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
 
-      {/*<Footer />
-       <Home />
-      <WhoAreWe />
-      <Report /> 
-      <br /> <br />
-       <Unpost /> 
-      <p>Sign In Below</p>
-       <Sign_in /> 
-      <About />
-    */}
+          <Route path="/quizes" exact>
+            <Quizes />
+          </Route>
+
+          <Route path="/create" exact>
+            <Create />
+          </Route>
+
+          <Route path="/about" exact>
+            <About />
+          </Route>
+
+          <Route path="/question/:quizId" exact>
+            <Question />
+          </Route>
+
+          <Route path="/result" exact>
+            <Result />
+          </Route>
+
+          <Route path="/profile/:userId" exact>
+            <Profile />
+          </Route>
+        </Switch>
+
+        <Footer />
+      </Router>
     </div>
   );
 }

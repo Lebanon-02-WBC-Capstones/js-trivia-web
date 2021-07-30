@@ -8,14 +8,12 @@ export default function DropdownList(props) {
     setDropdown(e);
   };
   return (
-    <div>
-      <DropdownButton id={props.style} title={dropdown} onSelect={handleSelect}>
-        {props.dropdownItems.map((dropdownItem, index) => (
-          <Dropdown.Item eventKey={dropdownItem} key={index}>
-            {dropdownItem}
-          </Dropdown.Item>
-        ))}
-      </DropdownButton>
-    </div>
+    <DropdownButton id={props.style} title={dropdown} onSelect={handleSelect}>
+      {props.dropdownItems.map((dropdownItem, index) => (
+        <Dropdown.Item eventKey={dropdownItem} key={index}>
+          {dropdownItem}
+        </Dropdown.Item>
+      ))}
+    </DropdownButton>
   );
 }

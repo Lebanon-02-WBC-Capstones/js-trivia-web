@@ -2,16 +2,14 @@
   color: white;
   background: #1a73e8;
   padding-top: 3em;
-  position: absolute;
-  bottom: 0;
+  height: 35%;
   width: 100%;
-  height: 229px;
-  display: flex;
-  justify-content: space-evenly;
+  bottom: 0;
+  z-index: 1;
+  position: relative;
 }
 
 .writings {
-  /* position: relative; */
   text-align: left;
   align-items: space-between;
   font-family: Helvetica, sans-serif;
@@ -31,10 +29,7 @@
 
 .rights {
   color: black;
-  position: absolute;
-  width: 1200px;
-  left: -3px;
-  bottom: -42px;
+  width: 100%;
   background: #f7f7f7;
   font-size: 13px;
 }

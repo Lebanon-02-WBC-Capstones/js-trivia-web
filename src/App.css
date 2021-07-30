@@ -36,6 +36,17 @@
     transform: rotate(360deg);
   }
 }
+#Navbar {
+  background-color: #1a73e8;
+  color: white;
+}
+
+#Play,
+#About,
+#Create,
+#Username {
+  color: white;
+}
 
 .WhoAreWe {
   text-align: center;
@@ -113,4 +124,45 @@
   color: black;
   border-radius: 25px;
   border-width: 2px;
+}
+.inputDiv {
+  padding: 0.3rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  border: 1px #1a73e8 solid;
+  border-radius: 50rem;
+}
+
+input {
+  background-color: transparent;
+  border: 0px solid;
+}
+input:focus {
+  outline: none;
+}
+
+.grey {
+  background-color: #f7f7f7;
+}
+.bold {
+  font-weight: bold;
+}
+.round-left {
+  border-top-left-radius: 50rem;
+  border-bottom-left-radius: 50rem;
+}
+.round-right {
+  border-top-right-radius: 50rem;
+  border-bottom-right-radius: 50rem;
+}
+
+.Row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Dropdown {
+  display: flex;
+  justify-content: space-between;
+  width: 25vw;
 }

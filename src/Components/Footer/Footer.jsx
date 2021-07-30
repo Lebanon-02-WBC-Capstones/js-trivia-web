@@ -29,7 +29,7 @@ function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="row">
+        <div>
           <p className="col-sm rights">Copyright ©</p>
         </div>
       </div>

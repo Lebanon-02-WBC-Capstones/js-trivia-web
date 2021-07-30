@@ -126,18 +126,17 @@
 
 #blueBackground {
   background-color: #1a73e8;
-  border-radius: 50rem;
+  border-radius: 25px;
   color: black;
 }
 
-#greyBackground {
-  background-color: #f7f7f7;
-  border-radius: 50rem;
-  color: black;
-  border-width: 2px;
+#whiteBackground {
   border-color: #1a73e8;
+  background-color: white;
+  color: black;
+  border-radius: 25px;
+  border-width: 2px;
 }
-
 .inputDiv {
   padding: 0.3rem 0.75rem;
   font-size: 1rem;

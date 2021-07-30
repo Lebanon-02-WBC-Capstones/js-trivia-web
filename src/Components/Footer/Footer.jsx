@@ -27,11 +27,10 @@ function Footer() {
             </ul>
           </div>
         </div>
-
-        {/* Footer Bottom */}
-        <div>
-          <p className="col-sm rights">Copyright ©</p>
-        </div>
+      </div>
+      {/* Footer Bottom */}
+      <div>
+        <p className="col-sm rights">Copyright ©</p>
       </div>
     </div>
   );

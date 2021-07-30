@@ -165,6 +165,7 @@ input:focus {
   display: flex;
   justify-content: space-between;
   width: 25vw;
+}
 /* Media Queries for adjusting card text sizes when screen size changes */
 
 /* Small devices (landscape phones, 200px and up) */

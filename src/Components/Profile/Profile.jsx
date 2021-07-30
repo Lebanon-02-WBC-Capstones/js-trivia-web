@@ -1,7 +1,8 @@
 import React from "react";
+import ReportsTable from "./ReportsTable";
 
 function Profile() {
-  return <div>Profile</div>;
+  return <ReportsTable />;
 }
 
 export default Profile;

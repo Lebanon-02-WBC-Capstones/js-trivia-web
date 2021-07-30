@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//import "../../App.css";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Person } from "react-bootstrap-icons";
-
+//import from ""
 export default function NavBar() {
   return (
     <div>
@@ -32,7 +31,7 @@ export default function NavBar() {
             </Nav.Link>
             <Nav.Link id="Username">
               <Link to="/profile/0" style={{ all: "unset" }}>
-                UserName
+                Username
               </Link>
             </Nav.Link>
             <Person />

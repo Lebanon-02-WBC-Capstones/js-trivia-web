@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import "./App.css";
 import React from "react";
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
@@ -10,13 +12,11 @@ import Profile from "./Components/Profile";
 import Quizes from "./Components/Quizes";
 import Result from "./Components/Result";
 import Question from "./Components/Question";
-
 function App() {
   return (
     <div className="App">
       <Router>
         <Navbar />
-
         <Switch>
           <Route path="/" exact>
             <Home />

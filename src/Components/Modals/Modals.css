@@ -25,18 +25,9 @@ textarea:focus {
 
 /* Each button has an id*/
 
-#SendButton {
-  border-radius: 20px;
-  width: 25%;
-}
-#CancelReport {
-  border-radius: 20px;
-  width: 25%;
-}
-#UnpostButton {
-  border-radius: 20px;
-  width: 25%;
-}
+#SendButton,
+#CancelReport,
+#UnpostButton,
 #CancelUnpost {
   border-radius: 20px;
   width: 25%;

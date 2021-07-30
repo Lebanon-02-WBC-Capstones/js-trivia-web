@@ -14,12 +14,12 @@ function Quizes() {
         <DropdownList
           dropdownItems={dropdownItems.difficulty}
           title="Difficulty"
-          style="whiteBackground"
+          style="greyBackground"
         />
         <DropdownList
           dropdownItems={dropdownItems.sortBy}
           title="Sort By"
-          style="whiteBackground"
+          style="greyBackground"
         />
       </div>
       <SearchBar />

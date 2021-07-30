@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
+/* eslint-disable react/prop-types */
 
 export default function ThankYouModal(props) {
   return (

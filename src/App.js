@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import AboutUS from "./components/User";
+import AboutUS from "./components/About";
 
 function App() {
   return (

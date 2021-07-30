@@ -22,7 +22,7 @@ export default function ContactUs() {
         <Form.Label>Message</Form.Label>
         <Form.Control as="textarea" rows={3} />
       </Form.Group>
-      <Button variant="primary" type="submit" onClick={() => setShow(true)}>
+      <Button variant="primary" id="SubmitForm" onClick={() => setShow(true)}>
         Submit
       </Button>
       <ThankYouModal show={show} onHide={() => setShow(false)} />

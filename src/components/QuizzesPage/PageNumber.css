@@ -1,0 +1,17 @@
+span.sr-only {
+  display: none;
+  border-radius: 50%;
+}
+
+a.page-link {
+  color: black;
+  border-radius: 50%;
+  border-color: #0d6efd;
+}
+
+.Pagi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}

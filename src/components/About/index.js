@@ -1,7 +1,7 @@
 // import { Modal } from "bootstrap";
 import React from "react";
 import ContactUs from "./contactUS";
-import ThankYouModal from "./ThankYouModal";
+import ThankYouModal from "../Modals/ThankYouModal";
 
 function AboutUS() {
   return (

@@ -1,7 +1,8 @@
 import React from "react";
+import QuestionsTable from "./QuestionsTable";
 
 function Create() {
-  return <div>Create</div>;
+  return <QuestionsTable />;
 }
 
 export default Create;

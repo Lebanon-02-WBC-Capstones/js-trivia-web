@@ -211,3 +211,8 @@ input:focus {
     font-size: 1.2rem !important;
   } /*1rem = 16px*/
 }
+
+.star {
+  font-size: 100%;
+  color: #1a73e8;
+}

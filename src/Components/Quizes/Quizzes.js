@@ -14,17 +14,9 @@ export const categories = {
 };
 
 export const difficulty = {
-  0: "Easy",
-  1: "Medium",
-  2: "Hard",
-};
-
-export const quiz = {
-  name: "Quiz Name",
-  rating: 3.8,
-  difficulty: 1,
-  players: 150,
-  category: 2,
+  1: "Easy",
+  2: "Med",
+  3: "Hard",
 };
 
 export const quizzes = [

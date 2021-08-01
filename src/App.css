@@ -142,7 +142,7 @@ input:focus {
   border-bottom-right-radius: 50rem;
 }
 
-/* Media Queries for adjusting card text sizes when screen size changes */
+/* Media Queries for adjusting  MEMBER card text sizes when screen size changes */
 
 /* Small devices (landscape phones, 200px and up) */
 @media (min-width: 200px) {
@@ -174,4 +174,9 @@ input:focus {
   p.cardText {
     font-size: 1.2rem !important;
   } /*1rem = 16px*/
+}
+
+.star {
+  font-size: 100%;
+  color: #1a73e8;
 }

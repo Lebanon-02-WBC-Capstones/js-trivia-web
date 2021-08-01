@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactSVG } from "react-svg";
-import Trash from "./trash.svg";
+import Trash from "../../Assets/trash.svg";
 
 function TableRow() {
   return (

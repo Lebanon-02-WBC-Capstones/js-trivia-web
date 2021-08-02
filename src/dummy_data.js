@@ -14,6 +14,7 @@ const categories = {
 };
 
 const quiz = {
+  name: "Math Quiz",
   id: 1234, //changed it to integer instead of string
   difficulty: 0, //0 is easy, 1 is medium, and 2 is hard
   times_played: 200,

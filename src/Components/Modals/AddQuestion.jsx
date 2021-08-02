@@ -6,16 +6,33 @@ import FormControl from "react-bootstrap/FormControl";
 import InputGroup from "react-bootstrap/InputGroup";
 import "./AddQuestion.css";
 
-export default function AddQuestion() {
+export default function AddQuestion(props) {
   const [show, setShow] = useState(false);
+  const [questionText, setQuestionText] = useState("");
+  const [correctAnswer, setCorrectAnswer] = useState("");
+  const [answer1, setAnswer1] = useState("");
+  const [answer2, setAnswer2] = useState("");
+  const [answer3, setAnswer3] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleSave = () => {
+    setShow(false);
+    props.function({
+      questionText: questionText,
+      questionOptions: [correctAnswer, answer1, answer2, answer3],
+      correctAnswer: correctAnswer,
+    });
+  };
+
   return (
     <>
-      <button className="ModalButton" onClick={handleShow}>
-        Delete
+      <button
+        className="button btn-outline-primary col-2 m-1"
+        onClick={handleShow}
+      >
+        Add Question
       </button>
 
       <Modal id="ModalPage" show={show} onHide={handleClose} animation={false}>
@@ -26,7 +43,11 @@ export default function AddQuestion() {
               controlId="exampleForm.ControlTextarea1"
             >
               <Form.Label>Question</Form.Label>
-              <Form.Control as="textarea" rows={3} />
+              <Form.Control
+                as="textarea"
+                rows={3}
+                onChange={(e) => setQuestionText(e.target.value)}
+              />
             </Form.Group>
           </Form>
           <Form.Label>Correct Answer:</Form.Label>
@@ -35,17 +56,19 @@ export default function AddQuestion() {
             <FormControl
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
+              onChange={(e) => setCorrectAnswer(e.target.value)}
             />
             <InputGroup.Text
               className="Green"
               id="basic-addon2"
             ></InputGroup.Text>
           </InputGroup>
-          <Form.Label >Incorrect Answers:</Form.Label>
+          <Form.Label>Incorrect Answers:</Form.Label>
           <InputGroup className="mb-3">
             <FormControl
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
+              onChange={(e) => setAnswer1(e.target.value)}
             />
             <InputGroup.Text
               className="Red"
@@ -56,6 +79,7 @@ export default function AddQuestion() {
             <FormControl
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
+              onChange={(e) => setAnswer2(e.target.value)}
             />
             <InputGroup.Text
               className="Red"
@@ -66,6 +90,7 @@ export default function AddQuestion() {
             <FormControl
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
+              onChange={(e) => setAnswer3(e.target.value)}
             />
             <InputGroup.Text
               className="Red"
@@ -77,7 +102,7 @@ export default function AddQuestion() {
           <Button
             variant="outline-danger"
             className="Button"
-            onClick={handleClose}
+            onClick={handleSave}
           >
             Save
           </Button>{" "}
@@ -93,4 +118,3 @@ export default function AddQuestion() {
     </>
   );
 }
-

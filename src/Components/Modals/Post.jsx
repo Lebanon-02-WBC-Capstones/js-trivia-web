@@ -12,7 +12,10 @@ export default function Post() {
 
   return (
     <>
-      <button className="ModalButton" onClick={handleShow}>
+      <button
+        className="button btn-outline-primary col-2 m-1"
+        onClick={handleShow}
+      >
         Post
       </button>
 

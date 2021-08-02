@@ -1,14 +1,35 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
-import { difficulty } from "./Quizzes";
+import { difficulty, categories } from "./Quizzes";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
 // import { ReactSVG } from "react-svg";
 // import starsvg from "./starsvg.svg";
-/* eslint-disable react/prop-types */
 
 // Please don't remove the comments; they help in breaking down the code and
 // organizing it
 function QuizCard(props) {
+  function diff_color(quiz) {
+    if (quiz.difficulty === 1) {
+      return (
+        <span className="badge rounded-pill bg-success align-left">
+          {difficulty[quiz.difficulty]}
+        </span>
+      );
+    } else if (quiz.difficulty === 3) {
+      return (
+        <span className="badge rounded-pill bg-danger align-left">
+          {difficulty[quiz.difficulty]}
+        </span>
+      );
+    } else {
+      return (
+        <span className="badge rounded-pill bg-warning align-left">
+          {difficulty[quiz.difficulty]}
+        </span>
+      );
+    }
+  }
   return (
     <div className="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
       {props.quizzes.map((quiz, index) => {
@@ -46,9 +67,10 @@ function QuizCard(props) {
                           {difficulty[quiz.difficulty]}
                         </span>)}
                       } */}
-                      <span className="badge rounded-pill bg-success align-left">
+                      {/* <span className="badge rounded-pill bg-success align-left">
                         {difficulty[quiz.difficulty]}
-                      </span>
+                      </span> */}
+                      {diff_color(quiz)}
                     </div>
                   </div>
                   {/* End of Second Row */}

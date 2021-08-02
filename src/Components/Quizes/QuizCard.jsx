@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { difficulty, categories } from "./Quizzes";
+import { difficulty, categories } from "../../dummy_data";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
 
@@ -54,7 +54,7 @@ function QuizCard(props) {
                       <h5 className="text-dark cardText ">{quiz.name}</h5>
                     </div>
 
-                    <div className="col-4 col-md-4 d-flex ">
+                    <div className="col-4 col-md-4 d-flex">
                       <span className="star">&#9733;</span>
                       <p className="cardText ">{quiz.rating}</p>
                     </div>

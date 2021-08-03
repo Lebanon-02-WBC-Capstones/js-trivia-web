@@ -1,9 +1,8 @@
 import React from "react";
-import Trash from "../../Assets/trash.svg";
-import { ReactSVG } from "react-svg";
+import DeleteModal from "../Modals/Delete";
 
 function Row(props) {
-  let { questionText, questionOptions, correctAnswer } = props.question;
+  let { id, questionText, questionOptions, correctAnswer } = props.question;
   return (
     <div className="row m-1">
       <div className="col-6 m-1 grey round-left p-1 text-center">
@@ -22,7 +21,7 @@ function Row(props) {
         {questionOptions[3]}
       </div>
       <div className="col-1 m-1 p-1 grey round-right text-center">
-        <ReactSVG src={Trash} />
+        <DeleteModal deleteQuestion={props.deleteQuestion} id={id} />
       </div>
     </div>
   );

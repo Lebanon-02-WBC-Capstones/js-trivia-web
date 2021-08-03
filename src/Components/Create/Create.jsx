@@ -34,11 +34,20 @@ function Create() {
     }));
   }
 
+  function deleteQuestion(id) {
+    let oldQuestions = [...quiz.questions];
+    let newQuestions = oldQuestions.filter((question) => id !== question.id);
+    setQuiz((prev) => ({ ...prev, questions: newQuestions }));
+  }
+
   return (
     <div>
       <h2 className="m-2">Edit Your Quiz</h2>
       <Header function={getValues} />
-      <QuestionsTable questions={quiz.questions} />
+      <QuestionsTable
+        questions={quiz.questions}
+        deleteQuestion={deleteQuestion}
+      />
       <Buttons function={getQuestion} />
     </div>
   );

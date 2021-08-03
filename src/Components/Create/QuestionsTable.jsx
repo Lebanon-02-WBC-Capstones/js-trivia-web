@@ -6,8 +6,12 @@ function QuestionsTable(props) {
   return (
     <Container>
       <Header />
-      {props.questions.map((question, index) => (
-        <Row question={question} key={index} />
+      {props.questions.map((question) => (
+        <Row
+          question={question}
+          deleteQuestion={props.deleteQuestion}
+          key={question.id}
+        />
       ))}
     </Container>
   );

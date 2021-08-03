@@ -16,7 +16,8 @@
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
     "no-console": 2,
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "no-unused-vars": "off"
   },
   "settings": {
     "react": {

@@ -20,17 +20,16 @@ export default function ExitQuiz() {
         Exit
       </button>
 
-      <Modal
-        id="ModalPage"
-        show={show}
-        onHide={handleClose}
-        animation={false}
-      >
+      <Modal id="ModalPage" show={show} onHide={handleClose} animation={false}>
         <Modal.Body bsPrefix="modal-body" className="Modals">
           Are you sure you want to exit this quiz?
         </Modal.Body>
         <Modal.Footer className="Modals">
-          <Button variant="outline-danger" className="Button" onClick={handleClose}>
+          <Button
+            variant="outline-danger"
+            className="Button"
+            onClick={handleClose}
+          >
             Yes
           </Button>{" "}
           <Button

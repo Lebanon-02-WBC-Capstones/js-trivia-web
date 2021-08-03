@@ -2,17 +2,17 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import Row from "./Row";
 
-function QuestionsTable() {
-  let testQustion = {
-    question: "2+2?",
-    wrongAnswers: [3, 5, 2],
-    correctAnswer: 4,
-  };
-
+function QuestionsTable(props) {
   return (
     <Container>
       <Header />
-      <Row question={testQustion} />
+      {props.questions.map((question) => (
+        <Row
+          question={question}
+          deleteQuestion={props.deleteQuestion}
+          key={question.id}
+        />
+      ))}
     </Container>
   );
 }

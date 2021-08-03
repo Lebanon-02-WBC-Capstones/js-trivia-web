@@ -8,9 +8,12 @@ export default function Unpost() {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <button
+        className="button btn-outline-danger col-2 m-1"
+        onClick={handleShow}
+      >
         Unpost
-      </Button>
+      </button>
 
       {/* Modal header */}
 

@@ -12,7 +12,10 @@ export default function Cancel() {
 
   return (
     <>
-      <button className="ModalButton" onClick={handleShow}>
+      <button
+        className="button btn-outline-danger col-2 m-1"
+        onClick={handleShow}
+      >
         Cancel
       </button>
 

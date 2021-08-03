@@ -1,19 +1,28 @@
 import { React, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import { ReactSVG } from "react-svg";
+import Trash from "../../Assets/trash.svg";
 
 import "./Delete.css";
 
-export default function DeleteQuestion() {
+export default function DeleteQuestion(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleDelete = () => {
+    setShow(false);
+    props.deleteQuestion(props.id);
+  };
 
   return (
     <>
-      <button className="ModalButton" onClick={handleShow}>
-        Delete
+      <button
+        style={{ border: "none", background: "transparent" }}
+        onClick={handleShow}
+      >
+        <ReactSVG src={Trash} />
       </button>
 
       <Modal id="ModalPage" show={show} onHide={handleClose} animation={false}>
@@ -24,7 +33,7 @@ export default function DeleteQuestion() {
           <Button
             variant="outline-danger"
             className="Button"
-            onClick={handleClose}
+            onClick={handleDelete}
           >
             Delete
           </Button>{" "}

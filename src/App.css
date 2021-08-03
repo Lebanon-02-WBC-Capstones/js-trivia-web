@@ -192,7 +192,7 @@ input:focus {
 @media (min-width: 768px) {
   h5.cardText,
   p.cardText {
-    font-size: 1rem !important;
+    font-size: 0.7rem !important;
   } /*1rem = 16px*/
 }
 
@@ -200,7 +200,7 @@ input:focus {
 @media (min-width: 992px) {
   h5.cardText,
   p.cardText {
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
   } /*1rem = 16px*/
 }
 
@@ -208,12 +208,12 @@ input:focus {
 @media (min-width: 1200px) {
   h5.cardText,
   p.cardText {
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
   } /*1rem = 16px*/
 }
 
 .star {
-  font-size: 100%;
+  font-size: 200%;
   color: #1a73e8;
 }
 

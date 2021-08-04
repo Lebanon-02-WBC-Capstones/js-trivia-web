@@ -1,7 +1,8 @@
 import React from "react";
+import DummyWriteData from "../../DummyWriteData";
 
 function Home() {
-  return <div>Home</div>;
+  return <DummyWriteData />;
 }
 
 export default Home;

@@ -21,16 +21,14 @@ export const difficulty = {
 
 export const quizzes = [
   {
-    id: 1234,
     name: "Quiz 1",
     rating: 3.8,
     difficulty: 1,
     players: 150,
     times_played: 200,
-    created_by: "username",
+    created_by: "JSTrivia",
     number_of_ratings: 1000,
     category: 1,
-    // New rating = (old_rating * (number_of_ratings-1) +new_rating)/ (number_of_ratings)
     questions: [
       {
         questionText: "What is 2+2?",
@@ -55,16 +53,14 @@ export const quizzes = [
     ],
   },
   {
-    id: 1234,
     name: "Quiz 2",
     rating: 3.8,
     difficulty: 2,
     players: 300,
     times_played: 700,
-    created_by: "user2",
+    created_by: "JSTrivia",
     number_of_ratings: 1567,
     category: 5,
-    // New rating = (old_rating * (number_of_ratings-1) +new_rating)/ (number_of_ratings)
     questions: [
       {
         questionText: "What does the MP stand for in MP3?",
@@ -99,16 +95,14 @@ export const quizzes = [
     ],
   },
   {
-    id: 1234,
     name: "Quiz 3",
     rating: 3.8,
     difficulty: 1,
     players: 150,
     times_played: 200,
-    created_by: "username",
+    created_by: "JSTrivia",
     number_of_ratings: 1000,
     category: 3,
-    // New rating = (old_rating * (number_of_ratings-1) +new_rating)/ (number_of_ratings)
     questions: [
       {
         questionText: "What is the capital of India?",
@@ -133,16 +127,14 @@ export const quizzes = [
     ],
   },
   {
-    id: 1234,
     name: "Quiz 4",
     rating: 3.8,
     difficulty: 3,
     players: 150,
     times_played: 200,
-    created_by: "username",
+    created_by: "JSTrivia",
     number_of_ratings: 1000,
     category: 6,
-    // New rating = (old_rating * (number_of_ratings-1) +new_rating)/ (number_of_ratings)
     questions: [
       {
         questionText:
@@ -175,16 +167,14 @@ export const quizzes = [
     ],
   },
   {
-    id: 1234,
     name: "Quiz 5",
     rating: 3.8,
     difficulty: 1,
     players: 150,
     times_played: 200,
-    created_by: "username",
+    created_by: "JSTrivia",
     number_of_ratings: 1000,
     category: 10,
-    // New rating = (old_rating * (number_of_ratings-1) +new_rating)/ (number_of_ratings)
     questions: [
       {
         questionText: "Which country hosted the 2021 Summer Olympics?",
@@ -211,16 +201,14 @@ export const quizzes = [
     ],
   },
   {
-    id: 1234,
     name: "Quiz 6",
     rating: 3.8,
     difficulty: 2,
     players: 150,
     times_played: 200,
-    created_by: "username",
+    created_by: "JSTrivia",
     number_of_ratings: 1000,
     category: 9,
-    // New rating = (old_rating * (number_of_ratings-1) +new_rating)/ (number_of_ratings)
     questions: [
       {
         questionText:

@@ -4,11 +4,15 @@ import Button from "react-bootstrap/Button";
 
 import "./Cancel.css";
 
-export default function Cancel() {
+export default function Cancel(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleCancel = () => {
+    props.deleteQuiz();
+    handleClose();
+  };
 
   return (
     <>
@@ -27,7 +31,7 @@ export default function Cancel() {
           <Button
             variant="outline-danger"
             className="Button"
-            onClick={handleClose}
+            onClick={handleCancel}
           >
             Okay
           </Button>{" "}

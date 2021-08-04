@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
+
 function Footer() {
   return (
     <div className="main-footer">
@@ -19,11 +21,23 @@ function Footer() {
           <div className=".col-md-3 col-sm-6 sitemap">
             <h4>Site Map</h4>
             <ul className="list-unstyled ">
-              <li>Play</li>
+              <li>
+                <Link to="/quizes" className="a">
+                  Play
+                </Link>
+              </li>
               <br></br>
-              <li>Create</li>
+              <li>
+                <Link to="/create" className="a">
+                  Create
+                </Link>
+              </li>
               <br></br>
-              <li>About us</li>
+              <li>
+                <Link to="/about" className="a">
+                  About
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

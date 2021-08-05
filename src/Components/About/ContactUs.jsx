@@ -14,10 +14,10 @@ export default function ContactUs() {
 
     emailjs
       .sendForm(
-        "service_fmge8o6",
-        "ContactUs",
+        "service_z1blugg",
+        "contactUs",
         e.target,
-        "user_LHAgrjFDucqaQHuDLk0rn"
+        "user_p0V78sb4NYqL2mnYtfCdM"
       )
       .then(
         (result) => {
@@ -43,7 +43,7 @@ export default function ContactUs() {
           <Form.Label column sm="2">
             Please enter your full name:
           </Form.Label>
-          <Col sm="7">
+          <Col>
             <Form.Control type="input" placeholder="Name" name="name" />
           </Col>
         </Form.Group>
@@ -56,7 +56,7 @@ export default function ContactUs() {
           <Form.Label column sm="2">
             Please enter your email:
           </Form.Label>
-          <Col sm="7">
+          <Col>
             <Form.Control type="email" placeholder="Enter email" name="email" />
           </Col>
           <Form.Text className="text-muted">
@@ -72,7 +72,7 @@ export default function ContactUs() {
           <Form.Label column sm="2">
             Please type your message here:
           </Form.Label>
-          <Col sm="7">
+          <Col>
             <Form.Control
               as="textarea"
               rows={3}

@@ -61,9 +61,6 @@ function Header(props) {
           />
         </div>
       </div>
-      <div>
-        {category} {name} {difficutly}
-      </div>
     </Container>
   );
 }

@@ -6,12 +6,12 @@ import Buttons from "./Buttons";
 function Create() {
   const [quiz, setQuiz] = useState({
     name: "",
-    difficulty: 0, //0 is easy, 1 is medium, and 2 is hard
+    rating: 0,
+    difficulty: 0,
     times_played: 0,
-    category: 0, //category integer is matched with text in above categories object
+    category: 0,
     created_by: "username",
     number_of_ratings: 0,
-    rating: 0,
     questions: [],
     posted: false,
     admin_message: "",
@@ -40,6 +40,21 @@ function Create() {
     setQuiz((prev) => ({ ...prev, questions: newQuestions }));
   }
 
+  function deleteQuiz() {
+    setQuiz({
+      name: "",
+      rating: 0,
+      difficulty: 0,
+      times_played: 0,
+      category: 0,
+      created_by: "username",
+      number_of_ratings: 0,
+      questions: [],
+      posted: false,
+      admin_message: "",
+    });
+  }
+
   return (
     <div>
       <h2 className="m-2">Edit Your Quiz</h2>
@@ -48,7 +63,7 @@ function Create() {
         questions={quiz.questions}
         deleteQuestion={deleteQuestion}
       />
-      <Buttons function={getQuestion} />
+      <Buttons getQuestion={getQuestion} quiz={quiz} deleteQuiz={deleteQuiz} />
     </div>
   );
 }

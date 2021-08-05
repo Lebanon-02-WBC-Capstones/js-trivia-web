@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Person } from "react-bootstrap-icons";
-//import from ""
+import Sign_up from "../Modals/Sign_up";
+import Sign_in from "../Modals/Sign_in";
+
 export default function NavBar() {
+  const [user, setUser] = useState();
+  const [signIn, setSingIn] = useState(false);
+
+  function showSignIn() {
+    setSingIn((prev) => !prev);
+  }
+
   return (
     <div>
       <Navbar id="Navbar" variant="dark">
@@ -30,9 +39,8 @@ export default function NavBar() {
               </Link>
             </Nav.Link>
             <Nav.Link id="Username">
-              <Link to="/profile/0" style={{ all: "unset" }}>
-                Username
-              </Link>
+              {user ? "username" : <Sign_up showSignIn={showSignIn} />}
+              <Sign_in show={signIn} showSignIn={showSignIn} />
             </Nav.Link>
             <Person />
           </Nav>

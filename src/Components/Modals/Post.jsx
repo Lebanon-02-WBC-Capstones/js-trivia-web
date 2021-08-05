@@ -1,14 +1,22 @@
 import { React, useState } from "react";
+import { Link } from "react-router-dom";
+import { db } from "../../Firebase";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-
 import "./Post.css";
 
-export default function Post() {
+export default function Post(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handlePost = () => {
+    db.collection("Quizzes").add({ ...props.quiz, posted: true });
+    handleClose();
+    // eslint-disable-next-line no-console
+    console.log("your quiz is now Posted");
+  };
 
   return (
     <>
@@ -27,9 +35,11 @@ export default function Post() {
           <Button
             variant="outline-danger"
             className="Button"
-            onClick={handleClose}
+            onClick={handlePost}
           >
-            Post
+            <Link to="/" style={{ all: "unset" }}>
+              Post
+            </Link>
           </Button>{" "}
           <Button
             variant="outline-success"

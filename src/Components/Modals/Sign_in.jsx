@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import "./Modals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -7,16 +7,22 @@ import password from "./images/padlock.png";
 import gmail from "./images/gmail.png";
 import facebook from "./images/facebook.png";
 
-function Sign_in() {
+function Sign_in(props) {
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+
+  const handleClose = () => {
+    setShow(false);
+    props.showSignIn();
+  };
+
+  useEffect(() => {
+    setShow(props.show);
+  }, [props.show]);
+
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Sign In
-      </Button>
-
       {/* Modal header */}
 
       <Modal show={show} onHide={handleClose}>
@@ -38,6 +44,7 @@ function Sign_in() {
                   name="report"
                   placeholder="Email"
                   className="ModalBody"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -52,6 +59,7 @@ function Sign_in() {
                   name="report"
                   placeholder="Password"
                   className="ModalBody"
+                  onChange={(e) => setPass(e.target.value)}
                 />
               </div>
             </div>

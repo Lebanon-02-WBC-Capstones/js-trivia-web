@@ -7,6 +7,9 @@ import emailPic from "./images/email.png";
 import password from "./images/padlock.png";
 import gmail from "./images/gmail.png";
 import facebook from "./images/facebook.png";
+import firebase from "firebase/app";
+import "firebase/auth";
+/* eslint-disable no-debugger, no-console */
 
 function Sign_up(props) {
   const [show, setShow] = useState(false);
@@ -16,6 +19,39 @@ function Sign_up(props) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  // Signs-in
+  function signIn() {
+    // Sign into Firebase using popup auth & Google as the identity provider.
+    let provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider);
+    console.log("signed in");
+  }
+
+  {
+    /*
+  function signUp() {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ..
+      });
+  }
+*/
+  }
+  function signOut() {
+    // Sign out of Firebase.
+    firebase.auth().signOut();
+    console.log(firebase.auth());
+  }
 
   return (
     <>
@@ -116,13 +152,34 @@ function Sign_up(props) {
               <a
                 href="#"
                 onClick={() => {
-                  props.showSignIn();
+                  // props.showSignIn();
                   handleClose();
+                  signIn();
+                  // initFirebaseAuth();
+                  // getProfilePicUrl();
+                  // getUserName();
+                  // isUserSignedIn();
                 }}
               >
                 <p>Sign in</p>
               </a>
             </div>
+            <a
+              href="#"
+              onClick={() => {
+                signOut();
+              }}
+            >
+              <p>Sign out</p>
+            </a>
+            {/* <a
+              href="#"
+              onClick={() => {
+                signUp();
+              }}
+            >
+              <p>Sign up</p>
+            </a> */}
           </Container>
         </Modal.Footer>
       </Modal>

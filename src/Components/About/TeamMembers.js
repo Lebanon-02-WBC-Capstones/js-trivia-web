@@ -26,7 +26,7 @@ const TeamMembers = [
   {
     name: "Wadad Al-Zein",
     image:
-      "https://media-exp1.licdn.com/dms/image/C4D03AQGpcRoUdGvFbg/profile-displayphoto-shrink_800_800/0/1619646133812?e=1632355200&v=beta&t=XEL5Vt1Ywm94l9dAhVbTntSfPGTogVaHow-R1urD5g0",
+      "https://media-exp1.licdn.com/dms/image/C4E03AQFozDuclqyPuA/profile-displayphoto-shrink_800_800/0/1628185624726?e=1633564800&v=beta&t=bVI09u-RGo0X67xdem1L1nZL1Vydv5GROhLqeHubcF0",
     title: "Team Member",
     linkedInLink: "https://www.linkedin.com/in/wadad-zein-153ba9210/",
     githubLink: "https://github.com/wadadzein",

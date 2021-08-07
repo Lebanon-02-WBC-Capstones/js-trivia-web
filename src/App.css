@@ -234,6 +234,12 @@ input:focus {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+.githubNoBorders {
+  border-radius: 70% !important;
+  background: transparent;
+}
+
 #Histogram {
   height: 15%;
   width: 15%;

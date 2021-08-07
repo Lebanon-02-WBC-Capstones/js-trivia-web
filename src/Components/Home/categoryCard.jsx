@@ -9,8 +9,8 @@ function Category(props) {
     <div className="card categoryCard w-100 ">
       <div className="card-body">
         <img src={imgURl} alt="category-icon" id="categoryImg" />
-      <h5 className="card-title">{title}</h5>
-       </div>
+        <h5 className="card-title">{title}</h5>
+      </div>
     </div>
   );
 }

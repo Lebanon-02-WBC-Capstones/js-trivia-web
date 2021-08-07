@@ -135,7 +135,6 @@
   border-radius: 50rem;
   color: black;
   background-color: #f7f7f7;
-  border-width: 2px;
 }
 .inputDiv {
   padding: 0.3rem 0.75rem;
@@ -170,7 +169,7 @@ input:focus {
 
 .Row {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .Dropdown {
@@ -239,4 +238,9 @@ input:focus {
 .githubNoBorders {
   border-radius: 70% !important;
   background: transparent;
+}
+
+#Histogram {
+  height: 15%;
+  width: 15%;
 }

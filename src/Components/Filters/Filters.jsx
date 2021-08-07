@@ -8,7 +8,7 @@ export default function Filters() {
       <DropdownList
         dropdownItems={dropdownItems.categories}
         title="Category"
-        style="blueBackground"
+        style="greyBackground"
       />
       <DropdownList
         dropdownItems={dropdownItems.difficulty}

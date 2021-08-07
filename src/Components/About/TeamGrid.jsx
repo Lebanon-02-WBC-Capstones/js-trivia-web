@@ -33,6 +33,7 @@ function TeamGrid() {
                 {"            "}
                 <a href={TeamMembers[0].githubLink}>
                   <img
+                    className="githubNoBorders"
                     src="https://major.io/wp-content/uploads/2014/08/github-150x150.png"
                     width="10%"
                     height="10%"

@@ -5,8 +5,8 @@ import "./PageNumber.css";
 
 export default function Pagenumber() {
   return (
-    <div className="Pagi">
-      <Pagination>
+    <div className="Pagi m-3">
+      <Pagination className="m-0">
         <Pagination.Prev id="rad" disabled className="m-1" />
         <Pagination.Item id="rad" className="m-1" active>
           {1}

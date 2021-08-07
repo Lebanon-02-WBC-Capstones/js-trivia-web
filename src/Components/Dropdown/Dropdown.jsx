@@ -12,7 +12,12 @@ export default function DropdownList(props) {
   };
 
   return (
-    <DropdownButton id={props.style} title={dropdown} onSelect={handleSelect}>
+    <DropdownButton
+      id={props.style}
+      title={dropdown}
+      onSelect={handleSelect}
+      className="m-2"
+    >
       {props.dropdownItems.map((dropdownItem, index) => (
         <Dropdown.Item eventKey={dropdownItem} key={index}>
           {dropdownItem}

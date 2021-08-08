@@ -1,18 +1,14 @@
 import React from "react";
-import Filters from "../Filters/Filters";
-//import SearchBar from "./SearchBar";
+import Filters from "./Filters";
 import QuizGrid from "./QuizGrid";
+import PageNumber from "./PageNumber";
+
 function Quizes() {
   return (
     <>
-      <div className=" Row container">
-        <Filters />
-        {/* <SearchBar /> */}
-        <QuizGrid />
-      </div>
-      {/* <div>
-        <QuizGrid />
-      </div> */}
+      <Filters />
+      <QuizGrid />
+      <PageNumber />
     </>
   );
 }

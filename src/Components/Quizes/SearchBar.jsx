@@ -4,7 +4,7 @@ import SearchIcon from "./search.svg";
 
 function SearchBar() {
   return (
-    <div className="form-outline col-3 d-flex inputDiv m-1">
+    <div className="form-outline col-3 d-flex inputDiv m-2">
       <input
         type="search"
         id="searchBox"

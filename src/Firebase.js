@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
-
+import "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyCnDkp_ixmeRPfBGvecGxuvwlKy_4tSQys",
   authDomain: "js-trivia-c6fbd.firebaseapp.com",
@@ -12,5 +12,9 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const db = firebase.firestore();
+const auth = firebase.auth();
+const google = new firebase.auth.GoogleAuthProvider();
+const facebookk = new firebase.auth.FacebookAuthProvider();
+export { auth, google, facebookk };
 export { db };
-export default firebase;
+export default { firebase };

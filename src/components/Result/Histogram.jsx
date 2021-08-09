@@ -17,8 +17,8 @@ export default function Histogram() {
   };
 
   return (
-    <div id="Histogram">
-      <Bar height="1500px" width="1500px" data={data} />
-    </div>
+    // <div>
+    <Bar height="100%" width="100%" data={data} />
+    // </div>
   );
 }

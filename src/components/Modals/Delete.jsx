@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { ReactSVG } from "react-svg";
-import Trash from "../../Assets/trash.svg";
+import Trash from "../../assets/trash.svg";
 
 import "./Delete.css";
 

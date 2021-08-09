@@ -2,9 +2,9 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 import "./home.css";
 
-import img3 from "../../Assets/kids.png";
-// import img2 from "../../Assets/remote.png";
-// import img1 from "../../Assets/team.png";
+import img3 from "../../assets/kids.png";
+// import img2 from "../../assets/remote.png";
+// import img1 from "../../assets/team.png";
 
 function CarouselMain() {
   return (

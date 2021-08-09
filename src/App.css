@@ -135,7 +135,6 @@
   border-radius: 50rem;
   color: black;
   background-color: #f7f7f7;
-  border-width: 2px;
 }
 .inputDiv {
   padding: 0.3rem 0.75rem;
@@ -170,7 +169,7 @@ input:focus {
 
 .Row {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .Dropdown {
@@ -236,6 +235,7 @@ input:focus {
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+<<<<<<< HEAD
 #user-pic {
   top: -3px;
   position: relative;
@@ -253,4 +253,14 @@ input:focus {
   line-height: 36px;
   padding-right: 10px;
   padding-left: 20px;
+=======
+.githubNoBorders {
+  border-radius: 70% !important;
+  background: transparent;
+}
+
+#Histogram {
+  height: 15%;
+  width: 15%;
+>>>>>>> dev
 }

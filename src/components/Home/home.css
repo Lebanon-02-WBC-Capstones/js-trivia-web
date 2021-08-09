@@ -1,0 +1,31 @@
+#categoryImg {
+  width: 30%;
+}
+
+.carouselImg {
+  max-width: 50rem;
+  max-height: 50rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.categoryCard {
+  padding-bottom: 4%;
+  padding-top: 4%;
+  height: 80%;
+  width: 30%;
+  margin-top: 15%;
+}
+.categoryCard :hover {
+  opacity: 0.7;
+  transform: scale(1.2);
+}
+
+#categoryImg {
+  max-width: 50rem;
+}
+.card-title {
+  margin-bottom: 0;
+}
+.card-body h5 {
+  margin-top: 2%;
+}

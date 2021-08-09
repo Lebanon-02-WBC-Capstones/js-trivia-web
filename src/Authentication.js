@@ -1,38 +1,64 @@
 import firebase from "firebase/app";
 import "firebase/auth";
+import { auth } from "./Firebase";
+/* eslint-disable no-debugger, no-console */
+// SIGN UP USING EMAIL + PASSWORD
 
-// Signs-in Friendly Chat.
-export function signIn() {
-  // Sign into Firebase using popup auth & Google as the identity provider.
-  let provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider);
+export function signUp(email, password) {
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in
+      var user = userCredential.user;
+      // ...
+      console.log(user);
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ..
+      console.log(error.message);
+    });
 }
-
-// Signs-out of Friendly Chat.
+{
+  /*
+export function sign_In(email, password) {
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in
+      var user = userCredential.user;
+      // ...
+      console.log(user);
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(error.message);
+    });
+}
+*/
+}
+export const sign_In = (email, password) => {
+  auth
+    .signInWithEmailAndPassword(email, password)
+    .then((user) => {
+      console.log(user);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 export function signOut() {
-  // Sign out of Firebase.
-  firebase.auth().signOut();
-}
-
-// Initiate Firebase Auth.
-export function initFirebaseAuth() {
-  // Listen to auth state changes.
-  firebase.auth().onAuthStateChanged(authStateObserver);
-}
-
-// Returns the signed-in user's profile pic URL.
-export function getProfilePicUrl() {
-  return (
-    firebase.auth().currentUser.photoURL || "/images/profile_placeholder.png"
-  );
-}
-
-// Returns the signed-in user's display name.
-export function getUserName() {
-  return firebase.auth().currentUser.displayName;
-}
-
-// Returns true if a user is signed-in.
-export function isUserSignedIn() {
-  return !!firebase.auth().currentUser;
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      // Sign-out successful.
+    })
+    .catch((error) => {
+      // An error happened.
+    });
 }

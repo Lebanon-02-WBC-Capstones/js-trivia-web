@@ -19,7 +19,7 @@ function DummyWriteData() {
     const data = await response.get();
     data.docs.forEach((quiz) => {
       // eslint-disable-next-line no-console
-      console.log(quiz.data());
+      //console.log(quiz.data());
       setQuizzesState((prev) => [...prev, quiz.data()]);
     });
   };

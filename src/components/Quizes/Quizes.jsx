@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 function Quizes() {
   const location = useLocation();
   const [filters, setFilters] = useState({
-    category: "",
+    category: location.state,
     difficulty: "",
     sortBy: "",
     search: "",

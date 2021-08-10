@@ -20,7 +20,6 @@ export default function DropdownList(props) {
   useEffect(() => {
     if (props.value) {
       handleSelect(props.dropdownItems[props.value]);
-      props.function(props.value);
     }
   }, []);
 

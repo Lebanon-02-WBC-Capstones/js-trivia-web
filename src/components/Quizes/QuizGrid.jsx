@@ -10,9 +10,11 @@ function QuizGrid(props) {
   const fetchQuizzes = async () => {
     const response = db.collection("Quizzes");
     const data = await response.get();
+    let fetchingArray = [];
     data.docs.forEach((quiz) => {
-      setQuizzes((prev) => [...prev, quiz.data()]);
+      fetchingArray.push(quiz.data());
     });
+    setQuizzes(fetchingArray);
   };
 
   useEffect(() => {
@@ -24,7 +26,7 @@ function QuizGrid(props) {
       (quiz) => quiz.category === props.filters.category
     );
     setfilteredQuizzes(filtered);
-  }, [props.filters.category]);
+  }, [props.filters.category, quizzes]);
 
   return (
     <div>

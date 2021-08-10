@@ -3,7 +3,7 @@ import Filters from "./Filters";
 import QuizGrid from "./QuizGrid";
 import PageNumber from "./PageNumber";
 import { useLocation } from "react-router-dom";
-// import DummyWriteData from "../../DummyWriteData";
+//import DummyWriteData from "../../DummyWriteData";
 
 function Quizes() {
   const location = useLocation();

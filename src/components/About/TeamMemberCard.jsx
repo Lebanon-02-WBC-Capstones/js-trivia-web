@@ -22,9 +22,10 @@ function TeamMemberCard(props) {
                     </p>
                     <a href={member.linkedInLink}>
                       <img
-                        src="https://www.pngall.com/wp-content/uploads/2016/07/Linkedin-Download-PNG.png"
+                        src="https://openvisualfx.com/wp-content/uploads/2019/10/linkedin-icon-logo-png-transparent.png"
                         width="10%"
                         height="10%"
+                        style={{ borderRadius: "50%" }}
                       ></img>
                     </a>
                     {"            "}

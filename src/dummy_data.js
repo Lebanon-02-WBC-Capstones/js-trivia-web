@@ -14,16 +14,16 @@ export const categories = {
 };
 
 export const difficulty = {
-  1: "Easy",
-  2: "Med",
-  3: "Hard",
+  0: "Easy",
+  1: "Med",
+  2: "Hard",
 };
 
 export const quizzes = [
   {
     name: "Quiz 1",
     rating: 3.8,
-    difficulty: 1,
+    difficulty: 0,
     players: 150,
     times_played: 200,
     created_by: "JSTrivia",
@@ -55,7 +55,7 @@ export const quizzes = [
   {
     name: "Quiz 2",
     rating: 3.8,
-    difficulty: 2,
+    difficulty: 1,
     players: 300,
     times_played: 700,
     created_by: "JSTrivia",
@@ -97,7 +97,7 @@ export const quizzes = [
   {
     name: "Quiz 3",
     rating: 3.8,
-    difficulty: 1,
+    difficulty: 0,
     players: 150,
     times_played: 200,
     created_by: "JSTrivia",
@@ -129,7 +129,7 @@ export const quizzes = [
   {
     name: "Quiz 4",
     rating: 3.8,
-    difficulty: 3,
+    difficulty: 2,
     players: 150,
     times_played: 200,
     created_by: "JSTrivia",
@@ -169,7 +169,7 @@ export const quizzes = [
   {
     name: "Quiz 5",
     rating: 3.8,
-    difficulty: 1,
+    difficulty: 0,
     players: 150,
     times_played: 200,
     created_by: "JSTrivia",
@@ -203,7 +203,7 @@ export const quizzes = [
   {
     name: "Quiz 6",
     rating: 3.8,
-    difficulty: 2,
+    difficulty: 1,
     players: 150,
     times_played: 200,
     created_by: "JSTrivia",

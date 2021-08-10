@@ -18,13 +18,13 @@ export default function NavBar() {
       <Navbar id="Navbar" variant="dark">
         <Container>
           <Navbar.Brand>
-            <Link to="/" style={{ all: "unset" }}>
+            <Link to="/" className="a">
               Logo
             </Link>
           </Navbar.Brand>
           <Nav>
             <Nav.Link id="Play">
-              <Link to="/quizes" style={{ all: "unset" }}>
+              <Link to="/quizzes" style={{ all: "unset" }}>
                 Play
               </Link>
             </Nav.Link>

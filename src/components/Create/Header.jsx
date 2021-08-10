@@ -8,24 +8,12 @@ function Header(props) {
   const [name, setName] = useState("");
   const [difficutly, setDifficutly] = useState("");
 
-  function getCategory(state) {
-    let id;
-    for (let i = 0; i < dropdownItems.categories.length; i++) {
-      if (dropdownItems.categories[i] === state) {
-        id = i;
-      }
-    }
-    setCategory(id);
+  function getCategory(category) {
+    setCategory(category);
   }
 
-  function getDifficulty(state) {
-    let id;
-    for (let i = 0; i < dropdownItems.difficulty.length; i++) {
-      if (dropdownItems.difficulty[i] === state) {
-        id = i;
-      }
-    }
-    setDifficutly(id);
+  function getDifficulty(difficulty) {
+    setDifficutly(difficulty);
   }
 
   useEffect(() => {
@@ -34,16 +22,15 @@ function Header(props) {
 
   return (
     <Container>
-      <div className="Row">
-        <div className="m-1">
-          <DropdownList
-            dropdownItems={dropdownItems.categories}
-            function={getCategory}
-            title="Category"
-            style="blueBackground"
-          />
-        </div>
-        <div className="form-outline col-3 d-flex inputDiv m-1">
+      <div className="d-flex justify-content-center">
+        <DropdownList
+          dropdownItems={dropdownItems.categories}
+          function={getCategory}
+          title="Category"
+          style="greyBackground"
+        />
+
+        <div className="form-outline col-3 d-flex inputDiv m-2">
           <input
             type="search"
             id="searchBox"
@@ -52,14 +39,13 @@ function Header(props) {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div className="m-1">
-          <DropdownList
-            dropdownItems={dropdownItems.difficulty}
-            function={getDifficulty}
-            title="Difficulty"
-            style="greyBackground"
-          />
-        </div>
+
+        <DropdownList
+          dropdownItems={dropdownItems.difficulty}
+          function={getDifficulty}
+          title="Difficulty"
+          style="greyBackground"
+        />
       </div>
     </Container>
   );

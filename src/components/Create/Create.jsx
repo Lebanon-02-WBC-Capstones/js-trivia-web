@@ -44,9 +44,9 @@ function Create() {
     setQuiz({
       name: "",
       rating: 0,
-      difficulty: 0,
+      difficulty: "",
       times_played: 0,
-      category: 0,
+      category: "",
       created_by: "username",
       number_of_ratings: 0,
       questions: [],

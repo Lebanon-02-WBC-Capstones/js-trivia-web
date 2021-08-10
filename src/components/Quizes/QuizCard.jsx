@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
-import { difficulty, categories } from "../../dummy_data";
+import { difficulty } from "../../dummy_data";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
 
@@ -8,20 +7,20 @@ import "../../App.css";
 // organizing it
 function QuizCard(props) {
   function diff_color(quiz) {
-    if (quiz.difficulty === 1) {
+    if (quiz.difficulty === 0) {
       return (
         <span
           className="badge rounded-pill bg-success align-left"
-          style={{ fontSize: "0.5rem" }}
+          style={{ fontSize: "0.7rem" }}
         >
           {difficulty[quiz.difficulty]}
         </span>
       );
-    } else if (quiz.difficulty === 3) {
+    } else if (quiz.difficulty === 2) {
       return (
         <span
           className="badge rounded-pill bg-danger align-left"
-          style={{ fontSize: "0.5rem" }}
+          style={{ fontSize: "0.7rem" }}
         >
           {difficulty[quiz.difficulty]}
         </span>
@@ -30,7 +29,7 @@ function QuizCard(props) {
       return (
         <span
           className="badge rounded-pill bg-warning align-left"
-          style={{ fontSize: "0.5rem" }}
+          style={{ fontSize: "0.7rem" }}
         >
           {difficulty[quiz.difficulty]}
         </span>

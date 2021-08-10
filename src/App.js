@@ -22,7 +22,7 @@ function App() {
             <Home />
           </Route>
 
-          <Route path="/quizes">
+          <Route path="/quizzes">
             <Quizes />
           </Route>
 

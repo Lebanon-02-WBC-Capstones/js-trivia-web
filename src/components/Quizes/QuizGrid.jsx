@@ -1,34 +1,35 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { db } from "../../Firebase";
-import { quizzes } from "./Quizzes.js";
 import QuizCard from "./QuizCard";
 import { Container } from "react-bootstrap";
-function QuizGrid() {
+
+function QuizGrid(props) {
   const [quizzes, setQuizzes] = useState([]);
-  const Fetchdata = () => {
-    db.collection("Quizzes")
-      .get()
-      .then((querySnapshot) => {
-        // Loop through the data and store
-        // it in array to display
-        querySnapshot.forEach((element) => {
-          var data = element.data();
-          setQuizzes((arr) => [...arr, data]);
-        });
-      });
+  const [filteredQuizzes, setfilteredQuizzes] = useState([]);
+
+  const fetchQuizzes = async () => {
+    const response = db.collection("Quizzes");
+    const data = await response.get();
+    data.docs.forEach((quiz) => {
+      setQuizzes((prev) => [...prev, quiz.data()]);
+    });
   };
-  window.addEventListener("load", () => {
-    Fetchdata();
-  });
-  // eslint-disable-next-line no-console
-  console.log("Next line quizzes");
-  // eslint-disable-next-line no-console
-  console.log(quizzes);
+
+  useEffect(() => {
+    fetchQuizzes();
+  }, []);
+
+  useEffect(() => {
+    let filtered = quizzes.filter(
+      (quiz) => quiz.category === props.filters.category
+    );
+    setfilteredQuizzes(filtered);
+  }, [props.filters.category]);
+
   return (
     <div>
       <Container>
-        <QuizCard quizzes={quizzes} />
+        <QuizCard quizzes={filteredQuizzes} />
       </Container>
     </div>
   );

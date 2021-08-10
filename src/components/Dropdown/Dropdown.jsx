@@ -1,18 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
-/* eslint-disable react/prop-types */
 
 export default function DropdownList(props) {
   const [dropdown, setDropdown] = useState(props.title);
   const [selection, setSelection] = useState(props.style);
+
   const handleSelect = (e) => {
     setDropdown(e);
-    //props.function(e);
+    let id;
+    for (let i = 0; i < props.dropdownItems.length; i++) {
+      if (props.dropdownItems[i] === e) {
+        id = i;
+      }
+    }
+    props.function(id);
     setSelection("blueBackground");
   };
 
+  useEffect(() => {
+    if (props.value) {
+      handleSelect(props.dropdownItems[props.value]);
+      props.function(props.value);
+    }
+  }, []);
+
   return (
-    <DropdownButton id={selection} title={dropdown} onSelect={handleSelect}>
+    <DropdownButton
+      id={selection}
+      title={dropdown}
+      onSelect={handleSelect}
+      className="m-2"
+    >
       {props.dropdownItems.map((dropdownItem, index) => (
         <Dropdown.Item eventKey={dropdownItem} key={index}>
           {dropdownItem}

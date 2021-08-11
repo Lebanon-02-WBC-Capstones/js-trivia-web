@@ -4,7 +4,7 @@ import DropdownList from "../Dropdown/Dropdown";
 import SearchBar from "./SearchBar";
 import { dropdownItems } from "../Dropdown/List";
 
-export default function Filters() {
+export default function Filters(props) {
   return (
     <Container>
       <div className="row d-flex justify-content-between">
@@ -13,6 +13,8 @@ export default function Filters() {
             dropdownItems={dropdownItems.categories}
             title="Category"
             style="blueBackground"
+            value={props.category}
+            function={props.setCategory}
           />
           <DropdownList
             dropdownItems={dropdownItems.difficulty}

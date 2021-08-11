@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
-import { difficulty, categories } from "../../dummy_data";
+import { difficulty } from "../../dummy_data";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
 
@@ -8,20 +7,20 @@ import "../../App.css";
 // organizing it
 function QuizCard(props) {
   function diff_color(quiz) {
-    if (quiz.difficulty === 1) {
+    if (quiz.difficulty === 0) {
       return (
         <span
           className="badge rounded-pill bg-success align-left"
-          style={{ fontSize: "0.5rem" }}
+          style={{ fontSize: "0.7rem" }}
         >
           {difficulty[quiz.difficulty]}
         </span>
       );
-    } else if (quiz.difficulty === 3) {
+    } else if (quiz.difficulty === 2) {
       return (
         <span
           className="badge rounded-pill bg-danger align-left"
-          style={{ fontSize: "0.5rem" }}
+          style={{ fontSize: "0.7rem" }}
         >
           {difficulty[quiz.difficulty]}
         </span>
@@ -30,7 +29,7 @@ function QuizCard(props) {
       return (
         <span
           className="badge rounded-pill bg-warning align-left"
-          style={{ fontSize: "0.5rem" }}
+          style={{ fontSize: "0.7rem" }}
         >
           {difficulty[quiz.difficulty]}
         </span>
@@ -39,38 +38,62 @@ function QuizCard(props) {
   }
   return (
     <div
-      className="row row-cols-1 row-cols-md-2 g-4 justify-content-center"
+      className="row row-cols-1 row-cols-md-2 g-4 m-3"
       style={{ fontSize: "0.5rem" }}
     >
       {props.quizzes.map((quiz, index) => {
         return (
-          <div className="col-6 col-md-6" key={index}>
-            <div className="col-9 col-md-9 mx-auto">
-              <div className="card mt-5">
+          <div className="d-flex col-6 col-md-6 m-0" key={index}>
+            <div className="col-9 col-md-9 mx-auto my-4">
+              <div className="card">
                 <div className="card-body">
                   {/* First Row with Quiz Title and Rating */}
-                  <div className="row justify-content-between">
-                    <div className="col-6 col-md-6">
-                      <h5 className="text-dark cardText ">{quiz.name}</h5>
-                    </div>
-
-                    <div className="col-4 col-md-4 d-flex">
-                      <span className="star">&#9733;</span>
-                      <p className="cardText ">{quiz.rating}</p>
+                  <div className="row">
+                    <div className="col-12 col-md-12">
+                      <h5
+                        className="text-dark mx-4"
+                        style={{ textAlign: "left" }}
+                      >
+                        {quiz.name}
+                      </h5>
                     </div>
                   </div>
                   {/* End of First Row */}
                   {/* Start of Second Row */}
                   <div className="row justify-content-start">
-                    <div className="col-4 col-md-4">{diff_color(quiz)}</div>
+                    <div
+                      className="col-4 col-md-4 mx-4"
+                      style={{ textAlign: "left" }}
+                    >
+                      {diff_color(quiz)}
+                    </div>
                   </div>
                   {/* End of Second Row */}
                   {/* Start of Third Row */}
                   <div className="row justify-content-start">
                     <div className="col-6 col-md-6 justify-content-start">
-                      <p className="cardText align-left">
+                      <p
+                        className="cardText align-left mx-4 m-1"
+                        style={{ textAlign: "left" }}
+                      >
                         Players: {quiz.players}
                       </p>
+                    </div>
+                    <div className="col-6 col-md-6 d-flex justify-content-end">
+                      <div className="d-flex mx-4 align-items-center align-text-middle">
+                        <div
+                          className="text-center star mr-1"
+                          style={{ fontSize: "1.5rem" }}
+                        >
+                          &#9733;
+                        </div>
+                        <div
+                          className="text-center"
+                          style={{ fontSize: "1rem" }}
+                        >
+                          {quiz.rating}
+                        </div>
+                      </div>
                     </div>
                   </div>
                   {/* End of Third Row */}

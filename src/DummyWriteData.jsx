@@ -6,10 +6,6 @@ function DummyWriteData() {
   const quizzesRef = db.collection("Quizzes");
   const [quizzesState, setQuizzesState] = useState([]);
 
-  useEffect(() => {
-    fetchQuizzes();
-  }, []);
-
   function writeData() {
     quizzes.forEach((quiz, index) => quizzesRef.add(quizzes[index]));
   }

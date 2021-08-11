@@ -2,7 +2,7 @@ import React from "react";
 import CategoryCard from "./categoryCard";
 import Categories from "./Categories";
 import { Container } from "react-bootstrap";
-/* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 
 function CategoryGrid() {
   return (
@@ -11,7 +11,12 @@ function CategoryGrid() {
         {Categories.map((cat) => {
           return (
             <div className="col-xl-4 col-md-4 col-sm-5 " key={cat.id}>
-              <CategoryCard category={cat} />
+              <Link
+                to={{ pathname: "/quizzes", state: cat.id }}
+                style={{ all: "unset" }}
+              >
+                <CategoryCard category={cat} />
+              </Link>
             </div>
           );
         })}

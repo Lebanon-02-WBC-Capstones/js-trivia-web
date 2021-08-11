@@ -1,6 +1,6 @@
 import React from "react";
 import { ReactSVG } from "react-svg";
-import SearchIcon from "./search.svg";
+import SearchIcon from "../../assets/search.svg";
 
 function SearchBar() {
   return (

@@ -1,6 +1,5 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-
 export default function Histogram() {
   const data = {
     labels: ["Your Score", "Average Score"],
@@ -17,8 +16,8 @@ export default function Histogram() {
   };
 
   return (
-    // <div>
-    <Bar height="100%" width="100%" data={data} />
-    // </div>
+    <div id="Histogram">
+      <Bar height="1500px" width="1500px" data={data} />
+    </div>
   );
 }

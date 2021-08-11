@@ -72,7 +72,7 @@ export default function QuizHandler() {
           },
         })
       ) : (
-        <Container className="container">
+        <Container className="Cont">
           <CloseButton />
           <div>
             {questionNumber ? (

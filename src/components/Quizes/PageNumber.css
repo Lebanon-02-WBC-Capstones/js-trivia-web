@@ -18,6 +18,7 @@ a.page-link {
   align-items: center;
   justify-content: center;
   position: relative;
+  padding-bottom: 2%;
 }
 
 .page-item:last-child .page-link {

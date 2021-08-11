@@ -11,7 +11,7 @@ function Home() {
       <br />
       <CategoryGrid />
       <br />
-     <Rating/>
+      <Rating />
     </>
   );
 }

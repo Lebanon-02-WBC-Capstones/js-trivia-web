@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from "react";
 import PropTypes from "prop-types";
-import { BsFillStarFill} from "react-icons/bs";
+import { BsFillStarFill } from "react-icons/bs";
 
 function Rate({ count, rating, color, onRating }) {
-    const [hoverRating, setHoverRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0);
 
   const getColor = (index) => {
     if (hoverRating >= index) {
@@ -22,7 +22,6 @@ function Rate({ count, rating, color, onRating }) {
       .map((idx) => (
         <BsFillStarFill
           key={idx}
-          
           onClick={() => onRating(idx)}
           style={{ color: getColor(idx) }}
           onMouseEnter={() => setHoverRating(idx)}
@@ -34,7 +33,7 @@ function Rate({ count, rating, color, onRating }) {
   return <div>{starRating}</div>;
 }
 
-    Rate.propTypes = {
+Rate.propTypes = {
   count: PropTypes.number,
   rating: PropTypes.number,
   onChange: PropTypes.func,
@@ -52,6 +51,5 @@ Rate.defaultProps = {
     unfilled: "#DCDCDC",
   },
 };
-
 
 export default Rate;

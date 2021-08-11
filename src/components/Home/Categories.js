@@ -56,7 +56,7 @@ const Categories = [
   },
   {
     id: 11,
-    title: "Challanges",
+    title: "challenges",
     imgURl: "https://image.flaticon.com/icons/png/512/1934/1934019.png",
   },
 ];

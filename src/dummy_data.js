@@ -32,23 +32,39 @@ export const quizzes = [
     questions: [
       {
         questionText: "What is 2+2?",
-        questionOptions: [4, 6, 8, 10],
-        correctAnswer: 4,
+        questionOptions: [
+          { answerText: 4, isCorrect: true },
+          { answerText: 6, isCorrect: false },
+          { answerText: 8, isCorrect: false },
+          { answerText: 10, isCorrect: false },
+        ],
       },
       {
         questionText: "What is 42*2?",
-        questionOptions: [84, 64, 422, 7],
-        correctAnswer: 84,
+        questionOptions: [
+          { answerText: 84, isCorrect: true },
+          { answerText: 64, isCorrect: false },
+          { answerText: 422, isCorrect: false },
+          { answerText: 7, isCorrect: false },
+        ],
       },
       {
         questionText: "How many sides does a square have ?",
-        questionOptions: [4, 6, 8, 10],
-        correctAnswer: 4,
+        questionOptions: [
+          { answerText: 4, isCorrect: true },
+          { answerText: 6, isCorrect: false },
+          { answerText: 8, isCorrect: false },
+          { answerText: 10, isCorrect: false },
+        ],
       },
       {
         questionText: "What is the sum of angles in a triangle?",
-        questionOptions: [180, 360, 100, 90],
-        correctAnswer: 180,
+        questionOptions: [
+          { answerText: 90, isCorrect: false },
+          { answerText: 100, isCorrect: false },
+          { answerText: 180, isCorrect: true },
+          { answerText: 360, isCorrect: false },
+        ],
       },
     ],
   },
@@ -65,32 +81,38 @@ export const quizzes = [
       {
         questionText: "What does the MP stand for in MP3?",
         questionOptions: [
-          "Music Player",
-          "Multi Pass",
-          "Micro Point",
-          "Moving Picture",
+          { answerText: "Music Player", isCorrect: false },
+          { answerText: "Multi Pass", isCorrect: false },
+          { answerText: "Micro Point", isCorrect: false },
+          { answerText: "Moving Picture", isCorrect: true },
         ],
-        correctAnswer: "Moving Picture",
       },
       {
         questionText: "What amount of bits commonly equals one byte?",
-        questionOptions: [1, 2, 8, 64],
-        correctAnswer: 8,
+        questionOptions: [
+          { answerText: 1, isCorrect: false },
+          { answerText: 2, isCorrect: false },
+          { answerText: 8, isCorrect: false },
+          { answerText: 64, isCorrect: true },
+        ],
       },
       {
         questionText: "In web design, what does CSS stand for?",
         questionOptions: [
-          "Counter Strike: Source",
-          "Corrective Style Sheet",
-          "Cascading Style Sheet",
-          "Computer Style Sheet",
+          { answerText: "Counter Strike: Source", isCorrect: false },
+          { answerText: "Corrective Style Sheet", isCorrect: false },
+          { answerText: "Cascading Style Sheet", isCorrect: true },
+          { answerText: "Computer Style Sheet", isCorrect: false },
         ],
-        correctAnswer: "Cascading Style Sheet",
       },
       {
         questionText: "This mobile OS held the largest market share in 2012.",
-        questionOptions: ["Android", "BlackBerry", "Symbian", "iOS"],
-        correctAnswer: "iOS",
+        questionOptions: [
+          { answerText: "Android", isCorrect: false },
+          { answerText: "BlackBerry", isCorrect: false },
+          { answerText: "Symbian", isCorrect: false },
+          { answerText: "iOS", isCorrect: true },
+        ],
       },
     ],
   },
@@ -106,23 +128,30 @@ export const quizzes = [
     questions: [
       {
         questionText: "What is the capital of India?",
-        questionOptions: ["Bejing", "Montreal", "Tithi", "New Delhi"],
-        correctAnswer: "New Delhi",
+        questionOptions: [
+          { answerText: "Bejing", isCorrect: false },
+          { answerText: "Montreal", isCorrect: false },
+          { answerText: "Tithi", isCorrect: false },
+          { answerText: "New Delhi", isCorrect: true },
+        ],
       },
       {
         questionText: "The Alps are a mountain range on which continent?",
-        questionOptions: ["North America", "Europe", "Asia", "Africa"],
-        correctAnswer: "Europe",
+        questionOptions: [
+          { answerText: "North America", isCorrect: false },
+          { answerText: "Europe", isCorrect: true },
+          { answerText: "Asia", isCorrect: false },
+          { answerText: "Africa", isCorrect: false },
+        ],
       },
       {
         questionText: "What is Laos?",
-        questionOptions: [4, 6, 8, 10],
-        correctAnswer: 4,
-      },
-      {
-        questionText: "What is the sum of angles in a triangle?",
-        questionOptions: ["Country", "Region", "River", "City"],
-        correctAnswer: "Country",
+        questionOptions: [
+          { answerText: "Country", isCorrect: true },
+          { answerText: "Region", isCorrect: false },
+          { answerText: "River", isCorrect: false },
+          { answerText: "City", isCorrect: false },
+        ],
       },
     ],
   },
@@ -139,30 +168,50 @@ export const quizzes = [
       {
         questionText:
           "In the Beatrix Potter books, what type of animal is Tommy Brock?",
-        questionOptions: ["Fox", "Frog", "Rabbit", "Badger"],
-        correctAnswer: "Badger",
+        questionOptions: [
+          { answerText: "Fox", isCorrect: false },
+          { answerText: "Frog", isCorrect: false },
+          { answerText: "Rabbit", isCorrect: false },
+          { answerText: "Badger", isCorrect: true },
+        ],
       },
       {
         questionText:
           "In the Harry Potter universe, what is Cornelius Fudge's middle name?",
-        questionOptions: ["James", "Harold", "Christopher", "Oswald"],
-        correctAnswer: 84,
+        questionOptions: [
+          { answerText: "James", isCorrect: false },
+          { answerText: "Harold", isCorrect: false },
+          { answerText: "Christopher", isCorrect: false },
+          { answerText: "Oswald", isCorrect: true },
+        ],
       },
       {
         questionText: "What is Hermione Granger's middle name?",
-        questionOptions: ["Jean", "Jane", "Emma", "Jo"],
-        correctAnswer: "Jean",
+        questionOptions: [
+          { answerText: "Jean", isCorrect: true },
+          { answerText: "Jane", isCorrect: false },
+          { answerText: "Emma", isCorrect: false },
+          { answerText: "Jo", isCorrect: false },
+        ],
       },
       {
         questionText:
           "In the Harry Potter series, what is Headmaster Dumbledore's full name?",
         questionOptions: [
-          "Albus Valum Jetta Mobius Dumbledore",
-          "Albus James Lunae Otto Dumbledore",
-          "Albus Valencium Horatio Kul Dumbledore",
-          "Albus Percival Wulfric Brian Dumbledore",
+          {
+            answerText: "Albus Valum Jetta Mobius Dumbledore",
+            isCorrect: false,
+          },
+          { answerText: "Albus James Lunae Otto Dumbledore", isCorrect: false },
+          {
+            answerText: "Albus Valencium Horatio Kul Dumbledore",
+            isCorrect: false,
+          },
+          {
+            answerText: "Albus Percival Wulfric Brian Dumbledore",
+            isCorrect: true,
+          },
         ],
-        correctAnswer: "Albus Percival Wulfric Brian Dumbledore",
       },
     ],
   },
@@ -178,25 +227,41 @@ export const quizzes = [
     questions: [
       {
         questionText: "Which country hosted the 2021 Summer Olympics?",
-        questionOptions: ["Japan", "China", "Australia", "Germany"],
-        correctAnswer: "Japan",
+        questionOptions: [
+          { answerText: "Japan", isCorrect: true },
+          { answerText: "China", isCorrect: false },
+          { answerText: "Australia", isCorrect: false },
+          { answerText: "Germany", isCorrect: false },
+        ],
       },
       {
         questionText: "Who won the 2015 Formula 1 World Championship?",
-        questionOptions: ["Quebec City", "Houston", "Montreal", "New York"],
-        correctAnswer: "Quebec City",
+        questionOptions: [
+          { answerText: "Quebec City", isCorrect: true },
+          { answerText: "Houston", isCorrect: false },
+          { answerText: "Montreal", isCorrect: false },
+          { answerText: "New York", isCorrect: false },
+        ],
       },
       {
         questionText:
           "What team did England beat to win in the 1966 World Cup final?",
-        questionOptions: ["West Germany", "Soviet Union", "Portugal", "Brazil"],
-        correctAnswer: "West Germany",
+        questionOptions: [
+          { answerText: "West Germany", isCorrect: true },
+          { answerText: "Soviet Union", isCorrect: false },
+          { answerText: "Portugal", isCorrect: false },
+          { answerText: "Brazil", isCorrect: false },
+        ],
       },
       {
         questionText:
           "In the 2014 FIFA World Cup, what was the final score in the match Brazil - Germany?",
-        questionOptions: ["1-5", "1-6", "2-6", "1-7"],
-        correctAnswer: "1-7",
+        questionOptions: [
+          { answerText: "1-5", isCorrect: false },
+          { answerText: "1-6", isCorrect: false },
+          { answerText: "2-6", isCorrect: false },
+          { answerText: "1-7", isCorrect: true },
+        ],
       },
     ],
   },
@@ -214,45 +279,41 @@ export const quizzes = [
         questionText:
           "Which president erased the national debt of the United States?",
         questionOptions: [
-          "Andrew Jackson",
-          "Ronald Reagan",
-          "John F. Kennedy",
-          "Franklin Roosevelt",
+          { answerText: "Andrew Jackson", isCorrect: true },
+          { answerText: "Ronald Reagan", isCorrect: false },
+          { answerText: "John F. Kennedy", isCorrect: false },
+          { answerText: "Franklin Roosevelt", isCorrect: false },
         ],
-        correctAnswer: "Andrew Jackson",
       },
       {
         questionText:
           "Who became Prime Minister of the United Kingdom in July 2016?",
         questionOptions: [
-          "Theresa May",
-          "Boris Johnson",
-          "David Cameron",
-          "Tony Blair",
+          { answerText: "Theresa May", isCorrect: true },
+          { answerText: "Boris Johnson", isCorrect: false },
+          { answerText: "David Cameron", isCorrect: false },
+          { answerText: "Tony Blair", isCorrect: false },
         ],
-        correctAnswer: "Theresa May",
       },
       {
         questionText:
           "What is former United States President Bill Clinton's full name?",
         questionOptions: [
-          "William Jefferson Clinton",
-          "William Roosevelt Clinton",
-          "William Truman Clinton",
-          "William Lincoln Clinton",
+          { answerText: "William Jefferson Clinton", isCorrect: true },
+          { answerText: "William Roosevelt Clinton", isCorrect: false },
+          { answerText: "William Truman Clinton", isCorrect: false },
+          { answerText: "William Lincoln Clinton", isCorrect: false },
         ],
-        correctAnswer: "William Jefferson Clinton",
       },
       {
         questionText:
           "Who succeeded Joseph Stalin as General Secretary of the Communist Party of the Soviet Union?",
         questionOptions: [
-          "Nikita Khrushchev",
-          "Leonid Brezhnev",
-          "Mikhail Gorbachev",
-          "Boris Yeltsin",
+          { answerText: "Nikita Khrushchev", isCorrect: true },
+          { answerText: "Leonid Brezhnev", isCorrect: false },
+          { answerText: "Mikhail Gorbachev", isCorrect: false },
+          { answerText: "Boris Yeltsin", isCorrect: false },
         ],
-        correctAnswer: "Nikita Khrushchev",
       },
     ],
   },

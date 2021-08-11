@@ -12,7 +12,7 @@ function QuizGrid(props) {
     const data = await response.get();
     let fetchingArray = [];
     data.docs.forEach((quiz) => {
-      fetchingArray.push(quiz.data());
+      fetchingArray.push({ ...quiz.data(), id: quiz.id });
     });
     setQuizzes(fetchingArray);
   };

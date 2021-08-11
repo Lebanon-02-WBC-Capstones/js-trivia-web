@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function CategoryGrid() {
   return (
-    <Container>
+    <Container id="categories">
       <div className="row row-cols-xl-3 row-cols-md-3 row-cols-sm-2">
         {Categories.map((cat) => {
           return (

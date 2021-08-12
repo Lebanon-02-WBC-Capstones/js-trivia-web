@@ -2,6 +2,9 @@ import React from "react";
 // import { Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../App.css";
+import linkedin from "../../assets/pictures/linkedin.png";
+import github from "../../assets/pictures/github.png";
+
 /* eslint-disable react/prop-types */
 function TeamMemberCard(props) {
   return (
@@ -22,7 +25,7 @@ function TeamMemberCard(props) {
                     </p>
                     <a href={member.linkedInLink}>
                       <img
-                        src="https://openvisualfx.com/wp-content/uploads/2019/10/linkedin-icon-logo-png-transparent.png"
+                        src={linkedin}
                         width="10%"
                         height="10%"
                         style={{ borderRadius: "50%" }}
@@ -32,7 +35,7 @@ function TeamMemberCard(props) {
                     <a href={member.githubLink}>
                       <img
                         className="githubNoBorders"
-                        src="https://major.io/wp-content/uploads/2014/08/github-150x150.png"
+                        src={github}
                         width="10%"
                         height="10%"
                       ></img>

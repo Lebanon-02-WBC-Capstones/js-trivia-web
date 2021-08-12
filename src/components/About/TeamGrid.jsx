@@ -3,6 +3,8 @@ import { Container } from "react-bootstrap";
 import TeamMembers from "./TeamMembers";
 import "bootstrap/dist/css/bootstrap.min.css";
 import TeamMemberCard from "./TeamMemberCard";
+import linkedin from "../../assets/pictures/linkedin.png";
+import github from "../../assets/pictures/github.png";
 /* eslint-disable react/prop-types */
 function TeamGrid() {
   return (
@@ -25,16 +27,17 @@ function TeamGrid() {
                 </p>
                 <a href={TeamMembers[0].linkedInLink}>
                   <img
-                    src="https://www.pngall.com/wp-content/uploads/2016/07/Linkedin-Download-PNG.png"
+                    src={linkedin}
                     width="10%"
                     height="10%"
+                    style={{ borderRadius: "50%" }}
                   ></img>
                 </a>
                 {"            "}
                 <a href={TeamMembers[0].githubLink}>
                   <img
                     className="githubNoBorders"
-                    src="https://major.io/wp-content/uploads/2014/08/github-150x150.png"
+                    src={github}
                     width="10%"
                     height="10%"
                   ></img>

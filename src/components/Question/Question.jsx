@@ -10,17 +10,28 @@ import "./Question.css";
 import { quizzes } from "../Quizes/Quizzes";
 import { db } from "../../Firebase";
 import { useParams, useHistory } from "react-router-dom";
+/* eslint-disable no-debugger, no-console */
 
 export default function QuizHandler() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [quiz, setQuiz] = useState([]);
+  const [quiz, setQuiz] = useState({});
+  const [questionNumber, setQuestionNumber] = useState(true);
+  const [showScore, setShowScore] = useState(false);
+  const [score, setScore] = useState(0);
+  const { id } = useParams();
+  const history = useHistory();
+
+  const getQuiz = async () => {
+    const response = db.collection("Quizzes");
+    const doc = await response.doc(id).get();
+    console.log(doc);
+    setQuiz(doc.data());
+  };
+
   useEffect(() => {
-    const getQuiz = async () => {
-      const response = db.collection("Quizzes");
-      const doc = await response.doc(id).get();
-      setQuiz(doc.data());
-    };
-  }, []);
+    getQuiz();
+    //console.log(quiz);
+  }, [id]);
 
   {
     /*
@@ -46,11 +57,6 @@ export default function QuizHandler() {
   ];
 */
   }
-  const [questionNumber, setQuestionNumber] = useState(true);
-  const [showScore, setShowScore] = useState(false);
-  const [score, setScore] = useState(0);
-  const { id } = useParams();
-  const history = useHistory();
 
   const handleClick = (isCorrect) => {
     const nextQuestion = currentQuestion + 1;
@@ -58,17 +64,20 @@ export default function QuizHandler() {
       setScore(score + 1);
     }
 
-    if (nextQuestion < quizzes[id - 1].questions.length) {
-      setCurrentQuestion(nextQuestion);
-    } else {
-      setShowScore(true);
-      setQuestionNumber(false);
-    }
+    // if (nextQuestion < quiz.questions.length) {
+    //   setCurrentQuestion(nextQuestion);
+    // } else {
+    //   setShowScore(true);
+    //   setQuestionNumber(false);
+    // }
   };
 
   const letters = ["A:", "B:", "C:", "D:"];
 
-  return (
+  return <div>hello</div>;
+  // {
+
+  /*
     <div className="quiz">
       {showScore ? (
         //history.push("/result", "", { score: score })
@@ -88,18 +97,18 @@ export default function QuizHandler() {
             {questionNumber ? (
               <div className="QuesNb">
                 Question <br />
-                {currentQuestion + 1}/{quizzes[id - 1].questions.length}
+                {currentQuestion + 1}/{quiz.questions.length} 
               </div>
             ) : (
               <div>you reached the end of the quiz</div>
             )}
           </div>
           <div className="question">
-            {quizzes[id - 1].questions[currentQuestion].questionText}
+            {quiz.questions[currentQuestion].questionText}
           </div>
 
           <div className="Answer">
-            {quizzes[id - 1].questions[currentQuestion].questionOptions.map(
+            {quiz.questions[currentQuestion].questionOptions.map(
               (questionOption, index) => (
                 <Container className="Container2" as={ButtonGroup} key={index}>
                   {" "}
@@ -123,5 +132,6 @@ export default function QuizHandler() {
         </Container>
       )}
     </div>
-  );
+              */
+  //};
 }

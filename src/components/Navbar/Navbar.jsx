@@ -5,6 +5,8 @@ import { Person } from "react-bootstrap-icons";
 import Sign_up from "../Modals/Sign_up";
 import Sign_in from "../Modals/Sign_in";
 import { auth } from "../../Firebase";
+import { HashLink } from "react-router-hash-link";
+
 /* eslint-disable no-debugger, no-console */
 
 export default function NavBar() {
@@ -52,9 +54,9 @@ export default function NavBar() {
           </Navbar.Brand>
           <Nav>
             <Nav.Link id="Play">
-              <Link to="/quizzes" style={{ all: "unset" }}>
+              <HashLink to="/#categories" style={{ all: "unset" }}>
                 Play
-              </Link>
+              </HashLink>
             </Nav.Link>
             <Nav.Link id="Create">
               <Link to="/create" style={{ all: "unset" }}>
@@ -70,7 +72,13 @@ export default function NavBar() {
               {user ? (
                 <div id="user-container">
                   <img src={auth.currentUser.photoURL} id="user-pic" />
-                  <span id="user-name">{auth.currentUser.displayName}</span>
+                  <Link
+                    to={"/profile/" + user.uid}
+                    id="user-name"
+                    style={{ all: "unset" }}
+                  >
+                    {auth.currentUser.displayName}
+                  </Link>
                   <button onClick={signOut}>Sign Out</button>
                 </div>
               ) : (

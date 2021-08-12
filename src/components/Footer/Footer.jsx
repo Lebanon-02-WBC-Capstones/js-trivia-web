@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import "./Footer.css";
 
 function Footer() {
@@ -22,9 +23,9 @@ function Footer() {
             <h4>Site Map</h4>
             <ul className="list-unstyled ">
               <li>
-                <Link to="/quizes" className="a">
+                <HashLink to="/#categories" className="a">
                   Play
-                </Link>
+                </HashLink>
               </li>
               <br></br>
               <li>

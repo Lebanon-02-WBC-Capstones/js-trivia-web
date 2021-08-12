@@ -7,7 +7,7 @@ import TeamMemberCard from "./TeamMemberCard";
 function TeamGrid() {
   return (
     <>
-      <Container>
+      <Container className="mt-5">
         <div className="row justify-content-center">
           <div className="col-3 col-md-3">
             <div className="card">

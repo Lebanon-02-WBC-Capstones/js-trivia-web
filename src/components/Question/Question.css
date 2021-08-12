@@ -1,6 +1,5 @@
 .Cont {
-  background: #f7f7f7;
-  justify-content: center;
+  background-color: #f7f7f7;
 }
 .question {
   padding-top: 2.5em;
@@ -18,6 +17,8 @@ button.But.btn.btn-warning {
 
 .Container2.container.btn-group {
   padding-bottom: 3%;
+  display: flex;
+  justify-content: center;
 }
 
 .QuesNb {
@@ -31,4 +32,8 @@ span#basic-addon1 {
   background-color: white;
   border: none;
   float: left;
+}
+
+#closeButton {
+  float: right;
 }

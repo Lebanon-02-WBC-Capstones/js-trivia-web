@@ -12,7 +12,7 @@ export default function Filters(props) {
           <DropdownList
             dropdownItems={dropdownItems.categories}
             title="Category"
-            style="blueBackground"
+            style="greyBackground"
             value={props.category}
             function={props.setCategory}
           />

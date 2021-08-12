@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
@@ -8,10 +8,20 @@ import CloseButton from "react-bootstrap/CloseButton";
 import InputGroup from "react-bootstrap/InputGroup";
 import "./Question.css";
 import { quizzes } from "../Quizes/Quizzes";
+import { db } from "../../Firebase";
 import { useParams, useHistory } from "react-router-dom";
 
 export default function QuizHandler() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [quiz, setQuiz] = useState([]);
+  useEffect(() => {
+    const getQuiz = async () => {
+      const response = db.collection("Quizzes");
+      const doc = await response.doc(id).get();
+      setQuiz(doc.data());
+    };
+  }, []);
+
   {
     /*
   const questions = [

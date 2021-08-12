@@ -18,6 +18,7 @@ function TeamGrid() {
                   src={TeamMembers[0].image}
                   width="100%"
                   height="100%"
+                  style={{ borderRadius: "50%" }}
                 ></img>
                 <h5 className="card-title text-dark cardText">
                   {TeamMembers[0].name}

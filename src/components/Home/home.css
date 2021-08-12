@@ -3,9 +3,8 @@
 }
 
 .carouselImg {
-  max-width: 50rem;
-  max-height: 50rem;
-  background-size: cover;
+  max-width: 600px;
+  max-height: 300px;
   background-repeat: no-repeat;
 }
 .categoryCard {
@@ -28,4 +27,14 @@
 }
 .card-body h5 {
   margin-top: 2%;
+}
+
+.carouselDiv {
+  max-width: 600px;
+  max-height: 300px;
+}
+
+.carouselSize {
+  max-width: 600px;
+  max-height: 300px;
 }

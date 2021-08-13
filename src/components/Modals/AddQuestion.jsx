@@ -20,10 +20,14 @@ export default function AddQuestion(props) {
   const handleSave = () => {
     setShow(false);
     props.function({
-      id: Date.now(),
+      questionId: Date.now(),
       questionText: questionText,
-      questionOptions: [correctAnswer, answer1, answer2, answer3],
-      correctAnswer: correctAnswer,
+      questionOptions: [
+        { answerText: correctAnswer, isCorrect: true },
+        { answerText: answer1, isCorrect: false },
+        { answerText: answer2, isCorrect: false },
+        { answerText: answer3, isCorrect: false },
+      ],
     });
   };
 

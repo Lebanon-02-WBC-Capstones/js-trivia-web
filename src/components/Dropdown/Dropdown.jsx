@@ -18,6 +18,13 @@ export default function DropdownList(props) {
   };
 
   useEffect(() => {
+    if (typeof props.title === "number") {
+      setDropdown(props.dropdownItems[props.title]);
+      setSelection("blueBackground");
+    }
+  }, [props.title]);
+
+  useEffect(() => {
     if (props.value) {
       handleSelect(props.dropdownItems[props.value]);
     }

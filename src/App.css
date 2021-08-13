@@ -159,12 +159,12 @@ input:focus {
   font-weight: bold;
 }
 .round-left {
-  border-top-left-radius: 50rem;
-  border-bottom-left-radius: 50rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 .round-right {
-  border-top-right-radius: 50rem;
-  border-bottom-right-radius: 50rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .Row {

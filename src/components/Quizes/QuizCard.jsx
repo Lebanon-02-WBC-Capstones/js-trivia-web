@@ -42,6 +42,8 @@ function QuizCard(props) {
       style={{ fontSize: "0.5rem" }}
     >
       {props.quizzes.map((quiz, index) => {
+        // eslint-disable-next-line no-console
+        console.log(quiz);
         return (
           <div className="d-flex col-6 col-md-6 m-0" key={index}>
             <div className="col-9 col-md-9 mx-auto my-4">

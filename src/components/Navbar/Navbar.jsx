@@ -20,11 +20,12 @@ export default function NavBar() {
   //to show the user
   useEffect(() => {
     auth.onAuthStateChanged((userAuth) => {
-      const user = {
-        uid: userAuth?.uid,
-        email: userAuth?.email,
-      };
       if (userAuth) {
+        const user = {
+          uid: userAuth.uid,
+          email: userAuth.email,
+          photo: userAuth.photoURL,
+        };
         //console.log(userAuth);
         console.log("Sign-in provider: " + userAuth.providerId);
         // console.log("  Provider-specific UID: " + profile.uid);
@@ -73,7 +74,7 @@ export default function NavBar() {
                 <div id="user-container">
                   <img src={auth.currentUser.photoURL} id="user-pic" />
                   <Link
-                    to={"/profile/" + user.uid}
+                    to={{ pathname: "/profile/" + user.uid, state: user }}
                     id="user-name"
                     style={{ all: "unset" }}
                   >

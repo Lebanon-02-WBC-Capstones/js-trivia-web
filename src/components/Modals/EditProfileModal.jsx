@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Modal, Button, Image, Form, Row } from "react-bootstrap";
 import DefaultPic from "../../assets/user-profile.png";
 import "./EditProfileModal";
 /* eslint-disable react/prop-types */
 
 export default function EditProfileModal(props) {
+  const [name, setName] = useState();
+
   return (
     <Modal {...props}>
       <Modal.Body className="edit-profile-modal">
         <Row>
-          <Image src={DefaultPic} width="193" roundedCircle />
+          <Image src={props.photo} width="10%" roundedCircle />
         </Row>
         <Row>
           <Button
@@ -20,7 +22,12 @@ export default function EditProfileModal(props) {
             <i>change your picture</i>
           </Button>
         </Row>
-        <Form.Control type="input" placeholder="User" name="name" />
+        <Form.Control
+          type="input"
+          placeholder="User"
+          name="name"
+          onChange={(e) => setName(e.target.value)}
+        />
       </Modal.Body>
       <Row>
         <Modal.Footer
@@ -33,7 +40,10 @@ export default function EditProfileModal(props) {
           <Button
             variant="outline-success"
             className="Button"
-            onClick={props.onHide}
+            onClick={() => {
+              props.onHide();
+              props.changeName(name);
+            }}
           >
             Save Changes
           </Button>

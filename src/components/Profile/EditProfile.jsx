@@ -1,14 +1,15 @@
-import userEvent from "@testing-library/user-event";
 import React, { useState } from "react";
 import { Image, Button } from "react-bootstrap";
 import DefaultPic from "../../assets/user-profile.png";
 import EditProfileModal from "../Modals/EditProfileModal";
 
-export default function EditProfile(props) {
+export default function EditProfile() {
   const [show, setShow] = useState(false);
 
   return (
     <div>
+      <Image src={DefaultPic} width="193" roundedCircle />
+      <h1>Welcome User</h1>
       <Button
         className="edit-profile-button"
         variant="text"
@@ -17,12 +18,7 @@ export default function EditProfile(props) {
       >
         <i>edit profile</i>
       </Button>
-      <EditProfileModal
-        show={show}
-        onHide={() => setShow(false)}
-        photo={props.photo}
-        changeName={props.changeName}
-      />
+      <EditProfileModal show={show} onHide={() => setShow(false)} />
     </div>
   );
 }

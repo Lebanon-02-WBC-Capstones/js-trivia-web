@@ -37,3 +37,28 @@ span#basic-addon1 {
 #closeButton {
   float: right;
 }
+
+.timer-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.timer {
+  font-family: "Montserrat";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6px;
+}
+.text {
+  color: #aaa;
+  font-size: 12px;
+}
+.value {
+  font-size: 22px;
+}
+.info {
+  max-width: 360px;
+  margin: 20px;
+  text-align: center;
+  align-items: center;
+}

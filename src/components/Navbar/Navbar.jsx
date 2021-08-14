@@ -72,6 +72,7 @@ export default function NavBar() {
               {user ? (
                 <div id="user-container">
                   <img src={auth.currentUser.photoURL} id="user-pic" />
+
                   <Link
                     to={"/profile/" + user.uid}
                     id="user-name"
@@ -79,7 +80,13 @@ export default function NavBar() {
                   >
                     {auth.currentUser.displayName}
                   </Link>
-                  <button onClick={signOut}>Sign Out</button>
+                  <button
+                    onClick={signOut}
+                    className="btn btn-primary"
+                    id="signOut"
+                  >
+                    Sign Out
+                  </button>
                 </div>
               ) : (
                 <Sign_up showSignIn={showSignIn} />

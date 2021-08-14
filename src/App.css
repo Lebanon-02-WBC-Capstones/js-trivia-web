@@ -57,6 +57,15 @@
 #Username {
   color: white;
   font-size: 1.25rem;
+  display: flex;
+}
+
+#signOut {
+  background-color: #1a73e8;
+  border-color: #1a73e8;
+  font-size: 1.25rem;
+  position: relative;
+  bottom: 6px;
   padding-left: 10%;
 }
 
@@ -245,24 +254,15 @@ input:focus {
 }
 
 #user-container {
-  position: absolute;
   display: flex;
-  flex-direction: row;
-  top: 22px;
-  width: 100%;
-  right: 0;
   padding-left: 10px;
-  justify-content: flex-end;
   padding-right: 10px;
 }
 #user-container #user-pic {
   top: -3px;
   position: relative;
-  display: inline-block;
-  background-repeat: no-repeat;
   width: 40px;
   height: 40px;
-  background-size: 40px;
   border-radius: 20px;
 }
 #user-container #user-name {

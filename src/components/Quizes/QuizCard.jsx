@@ -50,7 +50,7 @@ function QuizCard(props) {
         return (
           // Card output
 
-          <div className="quizcard col-5 col-md-5 p-0" key={index} id={quiz.id}>
+          <div className="quizcard col-5 col-md-5 p-0 pt-3" key={index} id={quiz.id}>
             <Link to={"/question/" + quiz.id} style={{ all: "unset" }}>
               {/* First row in each card */}
               <div className="row d-flex justify-content-between p-0">

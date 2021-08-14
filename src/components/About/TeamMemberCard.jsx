@@ -16,7 +16,12 @@ function TeamMemberCard(props) {
               <div className="col-9 col-md-9 mx-auto">
                 <div className="card mt-5" id={index}>
                   <div className="card-body">
-                    <img src={member.image} width="100%" height="100%"></img>
+                    <img
+                      src={member.image}
+                      width="100%"
+                      height="100%"
+                      style={{ borderRadius: "50%" }}
+                    ></img>
                     <h5 className="card-title text-dark cardText ">
                       {member.name}
                     </h5>

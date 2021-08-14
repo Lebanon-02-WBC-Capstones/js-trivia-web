@@ -21,6 +21,7 @@ export const difficulty = {
 
 export const quizzes = [
   {
+    id: 1,
     name: "Quiz 1",
     rating: 3.8,
     difficulty: 0,
@@ -69,6 +70,7 @@ export const quizzes = [
     ],
   },
   {
+    id: 2,
     name: "Quiz 2",
     rating: 3.8,
     difficulty: 1,
@@ -117,6 +119,7 @@ export const quizzes = [
     ],
   },
   {
+    id: 3,
     name: "Quiz 3",
     rating: 3.8,
     difficulty: 0,
@@ -156,6 +159,7 @@ export const quizzes = [
     ],
   },
   {
+    id: 4,
     name: "Quiz 4",
     rating: 3.8,
     difficulty: 2,
@@ -216,6 +220,7 @@ export const quizzes = [
     ],
   },
   {
+    id: 5,
     name: "Quiz 5",
     rating: 3.8,
     difficulty: 0,
@@ -266,6 +271,7 @@ export const quizzes = [
     ],
   },
   {
+    id: 6,
     name: "Quiz 6",
     rating: 3.8,
     difficulty: 1,

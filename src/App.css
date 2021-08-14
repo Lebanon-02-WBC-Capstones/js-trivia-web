@@ -57,9 +57,6 @@
 #Username {
   color: white;
   font-size: 1.25rem;
-}
-
-#Username {
   display: flex;
 }
 
@@ -69,6 +66,7 @@
   font-size: 1.25rem;
   position: relative;
   bottom: 6px;
+  padding-left: 10%;
 }
 
 .WhoAreWe {

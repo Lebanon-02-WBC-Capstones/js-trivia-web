@@ -9,7 +9,7 @@ import github from "../../assets/pictures/github.png";
 function TeamGrid() {
   return (
     <>
-      <Container>
+      <Container className="mt-5">
         <div className="row justify-content-center">
           <div className="col-3 col-md-3">
             <div className="card">
@@ -18,6 +18,7 @@ function TeamGrid() {
                   src={TeamMembers[0].image}
                   width="100%"
                   height="100%"
+                  style={{ borderRadius: "50%" }}
                 ></img>
                 <h5 className="card-title text-dark cardText">
                   {TeamMembers[0].name}

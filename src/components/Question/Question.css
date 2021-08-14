@@ -13,8 +13,13 @@ button.But.btn.btn-warning {
   border: none;
   width: 400px;
   border-radius: 0;
+  border-color: white;
+  outline: none;
+  box-shadow: none;
 }
-
+button.But.btn.btn-warning:hover {
+  background: #ffcd39;
+}
 .Container2.container.btn-group {
   padding-bottom: 3%;
   display: flex;

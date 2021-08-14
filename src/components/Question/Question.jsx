@@ -130,9 +130,11 @@ export default function QuizHandler() {
                       {" "}
                       <div className="QuesDiv">
                         <Button
+                         
                           variant="warning"
                           className="But"
                           index={index}
+                         
                           onClick={() => handleClick(questionOption.isCorrect)}
                         >
                           <InputGroup.Text id="basic-addon1">

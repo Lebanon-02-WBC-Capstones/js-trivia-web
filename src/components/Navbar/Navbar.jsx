@@ -6,7 +6,7 @@ import Sign_up from "../Modals/Sign_up";
 import Sign_in from "../Modals/Sign_in";
 import { auth } from "../../Firebase";
 import { HashLink } from "react-router-hash-link";
-
+import userimg from "../../assets/pictures/userimg.png";
 /* eslint-disable no-debugger, no-console */
 
 export default function NavBar() {
@@ -72,7 +72,10 @@ export default function NavBar() {
             <Nav.Link id="Username">
               {user ? (
                 <div id="user-container">
-                  <img src={auth.currentUser.photoURL} id="user-pic" />
+                  <img
+                    src={auth.currentUser.photoURL || userimg}
+                    id="user-pic"
+                  />
 
                   <Link
                     to={{ pathname: "/profile/" + user.uid, state: user }}

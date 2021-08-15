@@ -3,12 +3,12 @@ import { Modal, Button, Container } from "react-bootstrap";
 import Sign_in from "./Sign_in";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Modals.css";
+//import userPic from "./images/user.png";
 import emailPic from "./images/email.png";
 import password from "./images/padlock.png";
 import gmail from "./images/gmail.png";
 import facebook from "./images/facebook.png";
 import { auth, google } from "../../Firebase";
-import firebase from "firebase/app";
 /* eslint-disable no-debugger, no-console */
 
 function Sign_up(props) {
@@ -16,6 +16,7 @@ function Sign_up(props) {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const comfRef = useRef(null);
+  const userRef = useRef(null);
 
   const signUp = (e) => {
     e.preventDefault();
@@ -54,9 +55,26 @@ function Sign_up(props) {
         {/* Modal Body */}
 
         <Modal.Body>
-          {/* EMAIL */}
-
           <div className="container-fluid">
+            {/* USERNAME */}
+            <div className="row justify-content-center">
+              <div className="col-2 col-sm-2 col-md-2 p-0 my-auto text-center">
+                <img src={emailPic} alt="username" border="0" />
+              </div>
+              <div className=" col-10 col-sm-10 col-md-10 p-0 ">
+                <input
+                  type="text"
+                  name="report"
+                  placeholder="Username"
+                  className="ModalBody"
+                  ref={userRef}
+                />
+              </div>
+            </div>
+            <br />
+
+            {/* EMAIL */}
+
             <div className="row justify-content-center" id="signIn">
               <div className="col-2 col-sm-2 col-md-2 p-0 my-auto text-center">
                 <img src={emailPic} alt="email" border="0" />
@@ -99,7 +117,7 @@ function Sign_up(props) {
               </div>
               <div className="col-10 col-sm-10 col-md-10 p-0 my-auto mx-auto ">
                 <input
-                  type="text"
+                  type="password"
                   name="report"
                   placeholder="ConfirmPassword"
                   className="ModalBody"

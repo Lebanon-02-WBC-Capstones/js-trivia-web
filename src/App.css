@@ -271,3 +271,7 @@ input:focus {
   padding-right: 10px;
   padding-left: 20px;
 }
+
+.error {
+  color: red;
+}

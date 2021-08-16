@@ -120,8 +120,9 @@ export default function QuizHandler() {
               </div>
 
               <div className="Answer">
-                {quiz.questions[currentQuestion].questionOptions.map(
-                  (questionOption, index) => (
+                {quiz.questions[currentQuestion].questionOptions
+                  .sort(() => Math.random() - 0.5)
+                  .map((questionOption, index) => (
                     <Container
                       className="Container2"
                       as={ButtonGroup}
@@ -142,8 +143,7 @@ export default function QuizHandler() {
                         </Button>{" "}
                       </div>
                     </Container>
-                  )
-                )}
+                  ))}
               </div>
             </Container>
           )}

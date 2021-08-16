@@ -9,6 +9,7 @@ import "./Question.css";
 import { Link } from "react-router-dom";
 import { db } from "../../Firebase";
 import { useParams, useHistory } from "react-router-dom";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
 /* eslint-disable no-debugger, no-console */
 
 export default function QuizHandler() {
@@ -20,6 +21,7 @@ export default function QuizHandler() {
   const [loading, setLoading] = useState(true);
   const { quizId } = useParams();
   const history = useHistory();
+  const [key, setKey] = useState(0);
 
   const getQuiz = async () => {
     const response = db.collection("Quizzes");
@@ -40,6 +42,8 @@ export default function QuizHandler() {
   }, [loading]);
 
   const handleClick = (isCorrect) => {
+    setKey((prevKey) => prevKey + 1);
+
     const nextQuestion = currentQuestion + 1;
     if (isCorrect === true) {
       setScore(score + 1);
@@ -56,6 +60,18 @@ export default function QuizHandler() {
 
   const letters = ["A:", "B:", "C:", "D:"];
 
+  const renderTime = ({ remainingTime }) => {
+    if (remainingTime === 0) {
+      return <div className="timer">Too lale...</div>;
+    }
+
+    return (
+      <div className="timer">
+        <div className="value">{remainingTime}</div>
+      </div>
+    );
+  };
+
   return (
     <>
       {loading ? (
@@ -66,14 +82,28 @@ export default function QuizHandler() {
             history.push({
               pathname: "/result",
               state: {
-                score: score,
-              },
+                score: score
+              }
             })
           ) : (
             <Container className="Cont">
               <Link to="/quizzes" style={{ all: "unset" }}>
                 <CloseButton id="closeButton" />
               </Link>
+              <div className="timer-wrapper">
+                <CountdownCircleTimer
+                  className="timer2"
+                  key={key}
+                  strokeWidth={6}
+                  size={60}
+                  isPlaying
+                  duration={30}
+                  colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
+                  onComplete={() => [true, handleClick()]}
+                >
+                  {renderTime}
+                </CountdownCircleTimer>
+              </div>
               <div>
                 {questionNumber ? (
                   <div className="QuesNb">

@@ -11,10 +11,10 @@ import { HashLink } from "react-router-hash-link";
 
 export default function NavBar() {
   const [user, setUser] = useState(null);
-  const [signIn, setSingIn] = useState(false);
+  const [signUp, setSingUp] = useState(false);
 
-  function showSignIn() {
-    setSingIn((prev) => !prev);
+  function showSignUp() {
+    setSingUp((prev) => !prev);
   }
 
   //to show the user
@@ -90,9 +90,9 @@ export default function NavBar() {
                   </button>
                 </div>
               ) : (
-                <Sign_up showSignIn={showSignIn} />
+                <Sign_in showSignUp={showSignUp} />
               )}
-              <Sign_in show={signIn} showSignIn={showSignIn} />
+              <Sign_up showSignUp={showSignUp} show={signUp} />
             </Nav.Link>
             {/* <Person /> */}
           </Nav>

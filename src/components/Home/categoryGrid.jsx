@@ -7,7 +7,7 @@ import "./home.css";
 
 function CategoryGrid() {
   return (
-    <Container>
+    <Container id="categories">
       <svg>
         <filter id="blue-wash">
           <feColorMatrix

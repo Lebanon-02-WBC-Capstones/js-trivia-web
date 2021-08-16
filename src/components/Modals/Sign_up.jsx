@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Modal, Button, Container } from "react-bootstrap";
 import Sign_in from "./Sign_in";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,7 +12,7 @@ import firebase from "firebase/app";
 /* eslint-disable no-debugger, no-console */
 
 function Sign_up(props) {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(props.show);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const comfRef = useRef(null);
@@ -37,13 +37,14 @@ function Sign_up(props) {
     auth.signInWithPopup(google);
   };
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  useEffect(() => {
+    setShow(props.show);
+  }, [props.show]);
+
+  const handleClose = () => props.showSignUp();
 
   return (
     <>
-      <div onClick={handleShow}>SignUp</div>
-
       {/* Modal header */}
 
       <Modal show={show} onHide={handleClose}>
@@ -99,7 +100,7 @@ function Sign_up(props) {
               </div>
               <div className="col-10 col-sm-10 col-md-10 p-0 my-auto mx-auto ">
                 <input
-                  type="text"
+                  type="password"
                   name="report"
                   placeholder="ConfirmPassword"
                   className="ModalBody"
@@ -113,7 +114,13 @@ function Sign_up(props) {
 
             <div className="row">
               <div className="col-12 col-sm-12 col-md-12 text-center">
-                <Button id="SignInButton" onClick={signUp}>
+                <Button
+                  id="SignInButton"
+                  onClick={() => {
+                    signUp();
+                    handleClose();
+                  }}
+                >
                   Sign Up
                 </Button>
               </div>
@@ -150,21 +157,6 @@ function Sign_up(props) {
             <div className="row text-center">
               <a href="#" onClick={handleClose}>
                 <p>No thanks, I will continue as a guest</p>
-              </a>
-            </div>
-
-            {/* SIGN IN */}
-
-            <div className="row text-center">
-              <p>Already have an account?</p>
-              <a
-                href="#"
-                onClick={() => {
-                  props.showSignIn();
-                  handleClose();
-                }}
-              >
-                <p>Sign in</p>
               </a>
             </div>
           </Container>

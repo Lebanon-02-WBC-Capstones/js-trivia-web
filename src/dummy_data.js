@@ -38,7 +38,6 @@ export const quizzes = [
           { answerText: 8, isCorrect: false },
           { answerText: 10, isCorrect: false },
         ],
-        questionId: 0,
       },
       {
         questionText: "What is 42*2?",
@@ -48,7 +47,6 @@ export const quizzes = [
           { answerText: 422, isCorrect: false },
           { answerText: 7, isCorrect: false },
         ],
-        questionId: 1,
       },
       {
         questionText: "How many sides does a square have ?",
@@ -58,7 +56,6 @@ export const quizzes = [
           { answerText: 8, isCorrect: false },
           { answerText: 10, isCorrect: false },
         ],
-        questionId: 2,
       },
       {
         questionText: "What is the sum of angles in a triangle?",
@@ -68,7 +65,6 @@ export const quizzes = [
           { answerText: 180, isCorrect: true },
           { answerText: 360, isCorrect: false },
         ],
-        questionId: 3,
       },
     ],
   },
@@ -90,7 +86,6 @@ export const quizzes = [
           { answerText: "Micro Point", isCorrect: false },
           { answerText: "Moving Picture", isCorrect: true },
         ],
-        questionId: 0,
       },
       {
         questionText: "What amount of bits commonly equals one byte?",
@@ -100,7 +95,6 @@ export const quizzes = [
           { answerText: 8, isCorrect: false },
           { answerText: 64, isCorrect: true },
         ],
-        questionId: 1,
       },
       {
         questionText: "In web design, what does CSS stand for?",
@@ -110,7 +104,6 @@ export const quizzes = [
           { answerText: "Cascading Style Sheet", isCorrect: true },
           { answerText: "Computer Style Sheet", isCorrect: false },
         ],
-        questionId: 2,
       },
       {
         questionText: "This mobile OS held the largest market share in 2012.",
@@ -120,7 +113,6 @@ export const quizzes = [
           { answerText: "Symbian", isCorrect: false },
           { answerText: "iOS", isCorrect: true },
         ],
-        questionId: 3,
       },
     ],
   },
@@ -142,7 +134,6 @@ export const quizzes = [
           { answerText: "Tithi", isCorrect: false },
           { answerText: "New Delhi", isCorrect: true },
         ],
-        questionId: 0,
       },
       {
         questionText: "The Alps are a mountain range on which continent?",
@@ -152,7 +143,6 @@ export const quizzes = [
           { answerText: "Asia", isCorrect: false },
           { answerText: "Africa", isCorrect: false },
         ],
-        questionId: 1,
       },
       {
         questionText: "What is Laos?",
@@ -162,7 +152,6 @@ export const quizzes = [
           { answerText: "River", isCorrect: false },
           { answerText: "City", isCorrect: false },
         ],
-        questionId: 2,
       },
     ],
   },
@@ -185,7 +174,6 @@ export const quizzes = [
           { answerText: "Rabbit", isCorrect: false },
           { answerText: "Badger", isCorrect: true },
         ],
-        questionId: 0,
       },
       {
         questionText:
@@ -196,7 +184,6 @@ export const quizzes = [
           { answerText: "Christopher", isCorrect: false },
           { answerText: "Oswald", isCorrect: true },
         ],
-        questionId: 1,
       },
       {
         questionText: "What is Hermione Granger's middle name?",
@@ -206,7 +193,6 @@ export const quizzes = [
           { answerText: "Emma", isCorrect: false },
           { answerText: "Jo", isCorrect: false },
         ],
-        questionId: 2,
       },
       {
         questionText:
@@ -226,7 +212,6 @@ export const quizzes = [
             isCorrect: true,
           },
         ],
-        questionId: 3,
       },
     ],
   },
@@ -248,7 +233,6 @@ export const quizzes = [
           { answerText: "Australia", isCorrect: false },
           { answerText: "Germany", isCorrect: false },
         ],
-        questionId: 0,
       },
       {
         questionText: "Who won the 2015 Formula 1 World Championship?",
@@ -258,7 +242,6 @@ export const quizzes = [
           { answerText: "Montreal", isCorrect: false },
           { answerText: "New York", isCorrect: false },
         ],
-        questionId: 1,
       },
       {
         questionText:
@@ -269,7 +252,6 @@ export const quizzes = [
           { answerText: "Portugal", isCorrect: false },
           { answerText: "Brazil", isCorrect: false },
         ],
-        questionId: 2,
       },
       {
         questionText:
@@ -280,7 +262,6 @@ export const quizzes = [
           { answerText: "2-6", isCorrect: false },
           { answerText: "1-7", isCorrect: true },
         ],
-        questionId: 3,
       },
     ],
   },
@@ -303,7 +284,6 @@ export const quizzes = [
           { answerText: "John F. Kennedy", isCorrect: false },
           { answerText: "Franklin Roosevelt", isCorrect: false },
         ],
-        questionId: 0,
       },
       {
         questionText:
@@ -314,7 +294,6 @@ export const quizzes = [
           { answerText: "David Cameron", isCorrect: false },
           { answerText: "Tony Blair", isCorrect: false },
         ],
-        questionId: 1,
       },
       {
         questionText:
@@ -325,7 +304,6 @@ export const quizzes = [
           { answerText: "William Truman Clinton", isCorrect: false },
           { answerText: "William Lincoln Clinton", isCorrect: false },
         ],
-        questionId: 2,
       },
       {
         questionText:
@@ -336,49 +314,16 @@ export const quizzes = [
           { answerText: "Mikhail Gorbachev", isCorrect: false },
           { answerText: "Boris Yeltsin", isCorrect: false },
         ],
-        questionId: 3,
       },
     ],
   },
 ];
 
-export const dummyUser = {
-  isAdmin: true,
-  username: "JSTrivia Team",
-  quizzes: [
-    "01hbVvu365pZoSU146pM",
-    "4YjTYiJcnpDLEVnnNYbk",
-    "WBoRvtvaEGTpuT3IHCLO",
-    "1o8ZlhMfpdyv9gq6LvEL",
-  ],
+const user = {
+  admin: false,
+  username: "username", //removed email and password as these will be handled by firebase
+  //as Abdulrahman mentioned yesterday
+  id: 1234,
+  avatar: "example.jpg",
+  quizzes: [1234, 1342, 121, 3214],
 };
-
-export const dummyReports = [
-  {
-    message: "This quiz contains some inappropriate contents",
-    quizId: "01hbVvu365pZoSU146pM",
-    userId: "",
-    reportId: 0,
-  },
-  {
-    message:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum egestas libero, nec lobortis neque vehicula ullamcorper. Etiam ac ex ac libero vehicula congue sed ut dui. Vestibulum eu ipsum et urna fermentum vehicula. Curabitur sodales sem dolor, quis aliquam tortor porttitor quis. Nunc id elit velit. Morbi cursus eget est in commodo. ",
-    quizId: "4YjTYiJcnpDLEVnnNYbk",
-    userId: "",
-    reportId: 1,
-  },
-  {
-    message:
-      "Nam dignissim sagittis sagittis. Proin luctus nulla nec lorem vulputate porttitor. In consectetur ex enim, sit amet pulvinar urna auctor vel. ",
-    quizId: "WBoRvtvaEGTpuT3IHCLO",
-    userId: "",
-    reportId: 2,
-  },
-  {
-    message:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras elementum egestas libero, nec lobortis neque vehicula ullamcorper. Etiam ac ex ac libero vehicula congue sed ut dui. Vestibulum eu ipsum et urna fermentum vehicula. Curabitur sodales sem dolor, quis aliquam tortor porttitor quis. Nunc id elit velit. Morbi cursus eget est in commodo. Quisque sed nisi ultrices, fringilla ipsum nec, posuere quam. Suspendisse in orci vehicula felis dictum consectetur. Nam dignissim sagittis sagittis. Proin luctus nulla nec lorem vulputate porttitor. In consectetur ex enim, sit amet pulvinar urna auctor vel. Morbi rhoncus, nisi sit amet scelerisque imperdiet, tortor lacus interdum massa, sit amet condimentum leo neque vel nulla. Donec efficitur hendrerit sagittis. Donec a porttitor dui. Suspendisse sit amet vulputate metus.",
-    quizId: "1o8ZlhMfpdyv9gq6LvEL",
-    userId: "",
-    reportId: 3,
-  },
-];

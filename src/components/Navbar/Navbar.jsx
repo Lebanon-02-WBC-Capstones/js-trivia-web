@@ -5,6 +5,7 @@ import Sign_up from "../Modals/Sign_up";
 import Sign_in from "../Modals/Sign_in";
 import { auth } from "../../Firebase";
 import { HashLink } from "react-router-hash-link";
+import icon from "./icon.png";
 import userimg from "../../assets/pictures/userimg.png";
 
 /* eslint-disable no-debugger, no-console */
@@ -44,7 +45,7 @@ export default function NavBar() {
         <Container>
           <Navbar.Brand>
             <Link to="/" className="a">
-              Logo
+              <img src={icon} className="logo" />
             </Link>
           </Navbar.Brand>
           <Nav>

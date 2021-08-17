@@ -7,10 +7,11 @@ export default function WhoAreWe() {
       <div className="WhoAreWe">
         <h1>Who are we?</h1>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry s standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.
+          A group of six enthusiastic aspiring web developers who met through
+          the Re:Coded front-end web development bootcamp program in late
+          February. We overcame many obstacles together over several weeks as a
+          team and managed to deliver an entertaining website amongst all
+          hardships to all of you, our valued users.
         </p>
       </div>
     </Container>

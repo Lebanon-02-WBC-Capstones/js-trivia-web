@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import "./Modals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -52,15 +52,17 @@ function Sign_in(props) {
     setEmailError("");
     setPasswordError("");
     setGeneralError("");
-    props.showSignIn();
   };
 
   useEffect(() => {
     setShow(props.show);
   }, [props.show]);
 
+  const handleShow = () => setShow(true);
+
   return (
     <>
+      <div onClick={handleShow}>SignIn</div>
       {/* Modal header */}
 
       <Modal show={show} onHide={handleClose}>
@@ -139,9 +141,10 @@ function Sign_in(props) {
               <div className="col-12 col-sm-12 col-md-12 text-center">
                 <Button
                   id="SignInButton"
-                  onClick={() =>
-                    sign_In(emailRef.current.value, passwordRef.current.value)
-                  }
+                  onClick={() => {
+                    sign_In(emailRef.current.value, passwordRef.current.value);
+                    handleClose();
+                  }}
                 >
                   Sign In
                 </Button>
@@ -171,6 +174,20 @@ function Sign_in(props) {
                 </a>
               </div>
             </div>
+          </div>
+          {/* SIGN Up */}
+
+          <div className="row text-center">
+            <p>Do not have an account?</p>
+            <a
+              href="#"
+              onClick={() => {
+                props.showSignUp();
+                handleClose();
+              }}
+            >
+              <p>Sign Up</p>
+            </a>
           </div>
         </Modal.Body>
       </Modal>

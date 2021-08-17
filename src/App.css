@@ -64,9 +64,6 @@
   background-color: #1a73e8;
   border-color: #1a73e8;
   font-size: 1.25rem;
-  position: relative;
-  bottom: 6px;
-  padding-left: 10%;
 }
 
 .WhoAreWe {
@@ -168,12 +165,12 @@ input:focus {
   font-weight: bold;
 }
 .round-left {
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 50rem;
+  border-bottom-left-radius: 50rem;
 }
 .round-right {
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 50rem;
+  border-bottom-right-radius: 50rem;
 }
 
 .Row {
@@ -275,4 +272,7 @@ input:focus {
 .userGif {
   width: 30px;
   height: 30px;
+}
+.error {
+  color: red;
 }

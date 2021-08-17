@@ -12,6 +12,9 @@ import { auth, google } from "../../Firebase";
 
 function Sign_up(props) {
   const [show, setShow] = useState(false);
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [generalError, setGeneralError] = useState("");
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const comfRef = useRef(null);
@@ -26,15 +29,26 @@ function Sign_up(props) {
       )
       .catch((err) => {
         console.log(err);
+        if (err.code == "auth/invalid-email") {
+          setEmailError(err.message);
+        } else if (err.code == "auth/weak-password") {
+          setPasswordError(err.message);
+        } else {
+          setGeneralError(err.message);
+        }
       });
   };
 
   const joinUsingGoogle = () => {
-    // Sign into Firebase using popup auth & Google as the identity provider.
     auth.signInWithPopup(google);
   };
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+    setEmailError("");
+    setPasswordError("");
+    setGeneralError("");
+  };
   const handleShow = () => setShow(true);
 
   return (
@@ -82,14 +96,21 @@ function Sign_up(props) {
               <div className="col-2 col-sm-2 col-md-2 p-0 my-auto text-center">
                 <img src={emailPic} alt="email" border="0" />
               </div>
-              <div className=" col-10 col-sm-10 col-md-10 p-0 ">
+              <div className=" col-10 col-sm-10 col-md-10 p-0">
                 <input
                   type="text"
                   name="report"
                   placeholder="Email"
                   className="ModalBody"
                   ref={emailRef}
+                  onChange={() => {
+                    setEmailError("");
+                    setGeneralError("");
+                  }}
                 />
+              </div>
+              <div className=" col-8 col-sm-8 col-md-8 p-0">
+                {emailError ? <div className="error">{emailError} </div> : null}
               </div>
             </div>
             <br />
@@ -107,7 +128,16 @@ function Sign_up(props) {
                   placeholder="Password"
                   className="ModalBody"
                   ref={passwordRef}
+                  onChange={() => {
+                    setPasswordError("");
+                    setGeneralError("");
+                  }}
                 />
+              </div>
+              <div className=" col-8 col-sm-8 col-md-8 p-0">
+                {passwordError ? (
+                  <div className="error">{passwordError} </div>
+                ) : null}
               </div>
             </div>
             <br />
@@ -127,6 +157,15 @@ function Sign_up(props) {
                   ref={comfRef}
                 />
               </div>
+            </div>
+            <br />
+
+            {/* GENERAL ERROR MESSAGE */}
+
+            <div>
+              {generalError ? (
+                <div className="error">{generalError} </div>
+              ) : null}
             </div>
             <br />
 

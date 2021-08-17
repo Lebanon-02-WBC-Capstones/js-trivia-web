@@ -1,17 +1,16 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { CodeSlash } from "react-bootstrap-icons";
 import Row from "./Row";
 
 function QuestionsTable(props) {
   return (
     <Container>
       <Header />
-      {props.questions.map((question, index) => (
+      {props.questions.map((question) => (
         <Row
           question={question}
           deleteQuestion={props.deleteQuestion}
-          key={question.questionId}
+          key={question.id}
         />
       ))}
     </Container>

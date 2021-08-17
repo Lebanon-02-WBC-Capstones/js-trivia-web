@@ -11,6 +11,9 @@ import { auth, google, facebookk } from "../../Firebase";
 
 function Sign_in(props) {
   const [show, setShow] = useState(false);
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [generalError, setGeneralError] = useState("");
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
@@ -25,20 +28,28 @@ function Sign_in(props) {
       })
       .catch((err) => {
         console.log(err);
+        if (err.code == "auth/invalid-email") {
+          setEmailError(err.message);
+        } else if (err.code == "auth/weak-password") {
+          setPasswordError(err.message);
+        } else {
+          setGeneralError(err.message);
+        }
       });
   };
 
   const joinUsingGoogle = () => {
-    // Sign into Firebase using popup auth & Google as the identity provider.
     auth.signInWithPopup(google);
   };
 
   const joinUsingFacebook = () => {
-    // Sign into Firebase using popup auth & Google as the identity provider.
     auth.signInWithPopup(facebookk);
   };
   const handleClose = () => {
     setShow(false);
+    setEmailError("");
+    setPasswordError("");
+    setGeneralError("");
     props.showSignIn();
   };
 
@@ -72,7 +83,14 @@ function Sign_in(props) {
                   placeholder="Email"
                   className="ModalBody"
                   ref={emailRef}
+                  onChange={() => {
+                    setEmailError("");
+                    setGeneralError("");
+                  }}
                 />
+              </div>
+              <div className=" col-8 col-sm-8 col-md-10 p-0">
+                {emailError ? <div className="error">{emailError} </div> : null}
               </div>
             </div>
             <br />
@@ -85,13 +103,31 @@ function Sign_in(props) {
               </div>
               <div className="col-10 col-sm-10 col-md-10 p-0 my-auto mx-auto ">
                 <input
-                  type="text"
+                  type="password"
                   name="report"
                   placeholder="Password"
                   className="ModalBody"
                   ref={passwordRef}
+                  onChange={() => {
+                    setPasswordError("");
+                    setGeneralError("");
+                  }}
                 />
               </div>
+              <div className=" col-8 col-sm-8 col-md-10 p-0">
+                {passwordError ? (
+                  <div className="error">{passwordError} </div>
+                ) : null}
+              </div>
+            </div>
+            <br />
+
+            {/* GENERAL ERROR MESSAGE */}
+
+            <div>
+              {generalError ? (
+                <div className="error">{generalError} </div>
+              ) : null}
             </div>
             <br />
 

@@ -13,7 +13,6 @@ export default function NavBar() {
   const [user, setUser] = useState(null);
   const [signIn, setSingIn] = useState(false);
   const [name, setName] = useState("");
-
   function settingName(name) {
     setName(name);
   }
@@ -37,10 +36,6 @@ export default function NavBar() {
       }
     });
   }, []);
-
-  function signOut() {
-    return auth.signOut();
-  }
 
   return (
     <div>
@@ -70,25 +65,18 @@ export default function NavBar() {
             <Nav.Link id="Username">
               {user ? (
                 <div id="user-container">
-                  <img
-                    src={auth.currentUser.photoURL || userimg}
-                    id="user-pic"
-                  />
-
                   <Link
-                    to={{ pathname: "/profile/" + user.uid, state: user }}
+                    to={"/profile/" + user.uid}
                     id="user-name"
                     style={{ all: "unset" }}
                   >
-                    {name}
+                    <img
+                      src={auth.currentUser.photoURL || userimg}
+                      id="user-pic"
+                    />
+                    &nbsp;&nbsp;
+                    <span> {auth.currentUser.displayName || name}</span>
                   </Link>
-                  <button
-                    onClick={signOut}
-                    className="btn btn-primary"
-                    id="signOut"
-                  >
-                    Sign Out
-                  </button>
                 </div>
               ) : (
                 <Sign_up showSignIn={showSignIn} settingName={settingName} />

@@ -344,7 +344,6 @@ export const quizzes = [
 
 export const dummyUser = {
   isAdmin: true,
-  username: "JSTrivia Team",
   quizzes: [
     "01hbVvu365pZoSU146pM",
     "4YjTYiJcnpDLEVnnNYbk",

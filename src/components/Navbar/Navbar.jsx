@@ -1,37 +1,36 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { Person } from "react-bootstrap-icons";
 import Sign_up from "../Modals/Sign_up";
 import Sign_in from "../Modals/Sign_in";
 import { auth } from "../../Firebase";
 import { HashLink } from "react-router-hash-link";
 import userimg from "../../assets/pictures/userimg.png";
+
 /* eslint-disable no-debugger, no-console */
 
 export default function NavBar() {
   const [user, setUser] = useState(null);
   const [signIn, setSingIn] = useState(false);
+  const [name, setName] = useState("");
+
+  function settingName(name) {
+    setName(name);
+  }
 
   function showSignIn() {
     setSingIn((prev) => !prev);
   }
 
-  //to show the user
   useEffect(() => {
     auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
         const user = {
           uid: userAuth.uid,
+          name: name,
           email: userAuth.email,
           photo: userAuth.photoURL,
         };
-        //console.log(userAuth);
-        console.log("Sign-in provider: " + userAuth.providerId);
-        // console.log("  Provider-specific UID: " + profile.uid);
-        console.log("  Name: " + userAuth.displayName);
-        console.log("  Email: " + userAuth.email);
-        console.log("  Photo URL: " + userAuth.photoURL);
         setUser(user);
       } else {
         setUser(null);
@@ -39,7 +38,6 @@ export default function NavBar() {
     });
   }, []);
 
-  //sign out
   function signOut() {
     return auth.signOut();
   }
@@ -82,7 +80,7 @@ export default function NavBar() {
                     id="user-name"
                     style={{ all: "unset" }}
                   >
-                    {auth.currentUser.displayName}
+                    {name}
                   </Link>
                   <button
                     onClick={signOut}
@@ -93,11 +91,10 @@ export default function NavBar() {
                   </button>
                 </div>
               ) : (
-                <Sign_up showSignIn={showSignIn} />
+                <Sign_up showSignIn={showSignIn} settingName={settingName} />
               )}
               <Sign_in show={signIn} showSignIn={showSignIn} />
             </Nav.Link>
-            {/* <Person /> */}
           </Nav>
         </Container>
       </Navbar>

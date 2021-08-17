@@ -1,9 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Modal, Button, Container } from "react-bootstrap";
-import Sign_in from "./Sign_in";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Modals.css";
-//import userPic from "./images/user.png";
+import userGif from "./images/user.gif";
 import emailPic from "./images/email.png";
 import password from "./images/padlock.png";
 import gmail from "./images/gmail.png";
@@ -16,7 +15,7 @@ function Sign_up(props) {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const comfRef = useRef(null);
-  const userRef = useRef(null);
+  const userRef = useRef("");
 
   const signUp = (e) => {
     e.preventDefault();
@@ -25,9 +24,6 @@ function Sign_up(props) {
         emailRef.current.value,
         passwordRef.current.value
       )
-      .then((user) => {
-        console.log(user);
-      })
       .catch((err) => {
         console.log(err);
       });
@@ -57,19 +53,26 @@ function Sign_up(props) {
         <Modal.Body>
           <div className="container-fluid">
             {/* USERNAME */}
+
             <div className="row justify-content-center">
               <div className="col-2 col-sm-2 col-md-2 p-0 my-auto text-center">
-                <img src={emailPic} alt="username" border="0" />
+                <img
+                  src={userGif}
+                  className="userGif"
+                  alt="username"
+                  border="0"
+                />
               </div>
-              <div className=" col-10 col-sm-10 col-md-10 p-0 ">
+              <span className=" col-10 col-sm-10 col-md-10 p-0 ">
                 <input
                   type="text"
                   name="report"
                   placeholder="Username"
                   className="ModalBody"
                   ref={userRef}
+                  onChange={() => props.settingName(userRef.current.value)}
                 />
-              </div>
+              </span>
             </div>
             <br />
 
@@ -119,7 +122,7 @@ function Sign_up(props) {
                 <input
                   type="password"
                   name="report"
-                  placeholder="ConfirmPassword"
+                  placeholder="Confirm Password"
                   className="ModalBody"
                   ref={comfRef}
                 />

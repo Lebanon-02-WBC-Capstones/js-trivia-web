@@ -25,6 +25,7 @@ function Sign_in(props) {
       )
       .then((user) => {
         console.log(user);
+        handleClose();
       })
       .catch((err) => {
         console.log(err);
@@ -39,12 +40,10 @@ function Sign_in(props) {
   };
 
   const joinUsingGoogle = () => {
-    // Sign into Firebase using popup auth & Google as the identity provider.
     auth.signInWithPopup(google);
   };
 
   const joinUsingFacebook = () => {
-    // Sign into Firebase using popup auth & Google as the identity provider.
     auth.signInWithPopup(facebookk);
   };
   const handleClose = () => {
@@ -143,7 +142,6 @@ function Sign_in(props) {
                   id="SignInButton"
                   onClick={() => {
                     sign_In(emailRef.current.value, passwordRef.current.value);
-                    handleClose();
                   }}
                 >
                   Sign In

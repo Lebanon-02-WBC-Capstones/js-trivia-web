@@ -1,12 +1,26 @@
-import userEvent from "@testing-library/user-event";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Image, Button } from "react-bootstrap";
 import DefaultPic from "../../assets/user-profile.png";
 import EditProfileModal from "../Modals/EditProfileModal";
+import { auth } from "../../Firebase";
 
 export default function EditProfile(props) {
   const [show, setShow] = useState(false);
+  const [user, setUser] = useState(false);
 
+  useEffect(() => {
+    auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
+        setUser(true);
+      } else {
+        setUser(false);
+      }
+    });
+  }, []);
+
+  function signOut() {
+    return auth.signOut();
+  }
   return (
     <div>
       <Button
@@ -15,7 +29,7 @@ export default function EditProfile(props) {
         style={{ color: "blue" }}
         onClick={() => setShow(true)}
       >
-        <i>edit profile</i>
+        <i>Edit Profile</i>
       </Button>
       <EditProfileModal
         show={show}
@@ -23,6 +37,14 @@ export default function EditProfile(props) {
         photo={props.photo}
         changeName={props.changeName}
       />
+      {user ? (
+        <div>
+          {" "}
+          <button onClick={signOut} className="btn btn-primary" id="signOut">
+            Sign Out
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }

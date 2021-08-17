@@ -1,56 +1,51 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { Person } from "react-bootstrap-icons";
 import Sign_up from "../Modals/Sign_up";
 import Sign_in from "../Modals/Sign_in";
 import { auth } from "../../Firebase";
 import { HashLink } from "react-router-hash-link";
+import icon from "./icon.png";
+import userimg from "../../assets/pictures/userimg.png";
 
 /* eslint-disable no-debugger, no-console */
 
 export default function NavBar() {
   const [user, setUser] = useState(null);
   const [signUp, setSingUp] = useState(false);
+  const [name, setName] = useState("");
+
+  function settingName(name) {
+    setName(name);
+  }
 
   function showSignUp() {
     setSingUp((prev) => !prev);
   }
 
-  //to show the user
   useEffect(() => {
     auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
         const user = {
           uid: userAuth.uid,
+          username: name,
           email: userAuth.email,
           photo: userAuth.photoURL,
         };
-        //console.log(userAuth);
-        console.log("Sign-in provider: " + userAuth.providerId);
-        // console.log("  Provider-specific UID: " + profile.uid);
-        console.log("  Name: " + userAuth.displayName);
-        console.log("  Email: " + userAuth.email);
-        console.log("  Photo URL: " + userAuth.photoURL);
         setUser(user);
       } else {
         setUser(null);
       }
     });
-  }, []);
-
-  //sign out
-  function signOut() {
-    return auth.signOut();
-  }
+  }, [name]);
 
   return (
-    <div>
+    <div id="navbar">
       <Navbar id="Navbar" variant="dark">
         <Container>
           <Navbar.Brand>
             <Link to="/" className="a">
-              Logo
+              <img src={icon} className="logo" />
             </Link>
           </Navbar.Brand>
           <Nav>
@@ -72,29 +67,28 @@ export default function NavBar() {
             <Nav.Link id="Username">
               {user ? (
                 <div id="user-container">
-                  <img src={auth.currentUser.photoURL} id="user-pic" />
-
                   <Link
                     to={{ pathname: "/profile/" + user.uid, state: user }}
                     id="user-name"
                     style={{ all: "unset" }}
                   >
-                    {auth.currentUser.displayName}
+                    <img
+                      src={auth.currentUser.photoURL || userimg}
+                      id="user-pic"
+                    />
+                    &nbsp;&nbsp;
+                    <span> {auth.currentUser.displayName || name}</span>
                   </Link>
-                  <button
-                    onClick={signOut}
-                    className="btn btn-primary"
-                    id="signOut"
-                  >
-                    Sign Out
-                  </button>
                 </div>
               ) : (
                 <Sign_in showSignUp={showSignUp} />
               )}
-              <Sign_up showSignUp={showSignUp} show={signUp} />
+              <Sign_up
+                showSignUp={showSignUp}
+                show={signUp}
+                settingName={settingName}
+              />
             </Nav.Link>
-            {/* <Person /> */}
           </Nav>
         </Container>
       </Navbar>

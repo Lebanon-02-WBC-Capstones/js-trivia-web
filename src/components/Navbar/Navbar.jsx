@@ -39,7 +39,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <div>
+    <div id="navbar">
       <Navbar id="Navbar" variant="dark">
         <Container>
           <Navbar.Brand>

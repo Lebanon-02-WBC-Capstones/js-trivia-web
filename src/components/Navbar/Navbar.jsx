@@ -11,14 +11,15 @@ import userimg from "../../assets/pictures/userimg.png";
 
 export default function NavBar() {
   const [user, setUser] = useState(null);
-  const [signIn, setSingIn] = useState(false);
+  const [signUp, setSingUp] = useState(false);
   const [name, setName] = useState("");
+
   function settingName(name) {
     setName(name);
   }
 
-  function showSignIn() {
-    setSingIn((prev) => !prev);
+  function showSignUp() {
+    setSingUp((prev) => !prev);
   }
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export default function NavBar() {
       if (userAuth) {
         const user = {
           uid: userAuth.uid,
-          name: name,
+          username: name,
           email: userAuth.email,
           photo: userAuth.photoURL,
         };
@@ -79,9 +80,13 @@ export default function NavBar() {
                   </Link>
                 </div>
               ) : (
-                <Sign_up showSignIn={showSignIn} settingName={settingName} />
+                <Sign_in showSignUp={showSignUp} />
               )}
-              <Sign_in show={signIn} showSignIn={showSignIn} />
+              <Sign_up
+                showSignUp={showSignUp}
+                show={signUp}
+                settingName={settingName}
+              />
             </Nav.Link>
           </Nav>
         </Container>

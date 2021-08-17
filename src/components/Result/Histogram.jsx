@@ -14,7 +14,7 @@ export default function Histogram() {
         borderColor: ["#1a73e8", "#C4C4C4"],
         borderWidth: 1,
         barThickness: 50,
-        data: [score.state.score, 4],
+        data: [score.state.score, 3.2],
       },
     ],
   };

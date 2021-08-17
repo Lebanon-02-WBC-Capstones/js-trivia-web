@@ -13,7 +13,7 @@ function Buttons(props) {
           <AddQuestion function={props.getQuestion} />
           <Post quiz={props.quiz} />
           <Unpost />
-          <Cancel deleteQuiz={props.deleteQuiz} />
+          <Cancel />
         </div>
       </div>
     </Container>

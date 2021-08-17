@@ -3,16 +3,13 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
 import "./Cancel.css";
+import { Link } from "react-router-dom";
 
-export default function Cancel(props) {
+export default function Cancel() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const handleCancel = () => {
-    props.deleteQuiz();
-    handleClose();
-  };
 
   return (
     <>
@@ -28,12 +25,10 @@ export default function Cancel(props) {
           All your changes will be lost.
         </Modal.Body>
         <Modal.Footer className="Modals">
-          <Button
-            variant="outline-danger"
-            className="Button"
-            onClick={handleCancel}
-          >
-            Okay
+          <Button variant="outline-danger" className="Button">
+            <Link to="/" style={{ all: "unset" }}>
+              Okay
+            </Link>
           </Button>{" "}
           <Button
             variant="outline-success"

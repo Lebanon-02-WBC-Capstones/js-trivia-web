@@ -4,7 +4,7 @@ import DefaultPic from "../../assets/user-profile.png";
 import EditProfileModal from "../Modals/EditProfileModal";
 import { auth } from "../../Firebase";
 
-export default function EditProfile() {
+export default function EditProfile(props) {
   const [show, setShow] = useState(false);
   const [user, setUser] = useState(false);
 
@@ -23,8 +23,6 @@ export default function EditProfile() {
   }
   return (
     <div>
-      <Image src={DefaultPic} width="193" roundedCircle />
-      <h1>Welcome User</h1>
       <Button
         className="edit-profile-button"
         variant="text"
@@ -33,7 +31,12 @@ export default function EditProfile() {
       >
         <i>Edit Profile</i>
       </Button>
-      <EditProfileModal show={show} onHide={() => setShow(false)} />
+      <EditProfileModal
+        show={show}
+        onHide={() => setShow(false)}
+        photo={props.photo}
+        changeName={props.changeName}
+      />
       {user ? (
         <div>
           {" "}

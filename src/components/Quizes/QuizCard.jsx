@@ -44,6 +44,8 @@ function QuizCard(props) {
       style={{ fontSize: "0.5rem" }}
     >
       {props.quizzes.map((quiz, index) => {
+        // eslint-disable-next-line no-console
+        console.log(quiz);
         return (
           // Card output
 

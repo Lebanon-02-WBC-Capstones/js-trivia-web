@@ -13,7 +13,7 @@ function UserQuizzes(props) {
         .doc(id)
         .get()
         .then((doc) => {
-          setQuizzes((prev) => [...prev, doc.data()]);
+          setQuizzes((prev) => [...prev, { ...doc.data(), id: doc.id }]);
         });
     });
   }, [props.userQuizzes]);

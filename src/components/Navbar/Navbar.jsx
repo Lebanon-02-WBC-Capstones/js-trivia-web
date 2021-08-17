@@ -37,7 +37,7 @@ export default function NavBar() {
         setUser(null);
       }
     });
-  }, []);
+  }, [name]);
 
   return (
     <div id="navbar">
@@ -68,7 +68,7 @@ export default function NavBar() {
               {user ? (
                 <div id="user-container">
                   <Link
-                    to={"/profile/" + user.uid}
+                    to={{ pathname: "/profile/" + user.uid, state: user }}
                     id="user-name"
                     style={{ all: "unset" }}
                   >

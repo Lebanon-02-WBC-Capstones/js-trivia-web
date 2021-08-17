@@ -57,7 +57,6 @@ function Sign_up(props) {
     setPasswordError("");
     setGeneralError("");
   };
-  const handleShow = () => setShow(true);
 
   return (
     <>

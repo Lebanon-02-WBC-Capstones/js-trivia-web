@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import "./Modals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -57,6 +57,8 @@ function Sign_in(props) {
   useEffect(() => {
     setShow(props.show);
   }, [props.show]);
+
+  const handleShow = () => setShow(true);
 
   return (
     <>

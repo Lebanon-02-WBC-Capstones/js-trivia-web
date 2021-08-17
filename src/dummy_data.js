@@ -319,6 +319,16 @@ export const quizzes = [
   },
 ];
 
+// export const dummyUser = {
+//   isAdmin: true,
+//   quizzes: [
+//     "01hbVvu365pZoSU146pM",
+//     "4YjTYiJcnpDLEVnnNYbk",
+//     "WBoRvtvaEGTpuT3IHCLO",
+//     "1o8ZlhMfpdyv9gq6LvEL",
+//   ],
+// };
+
 const user = {
   admin: false,
   username: "username", //removed email and password as these will be handled by firebase
